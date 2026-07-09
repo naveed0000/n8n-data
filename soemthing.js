@@ -3,1085 +3,1077 @@
 
 const jsonData = [
   {
-    "generationconfig": {
-      "exam": "jee main",
-      "year": 2026,
-      "subject": "physics",
-      "language": "english",
-      "totalquestions": 600,
-      "batchsize": 5,
-      "strictmode": true,
-      "outputformat": "json"
+    generationconfig: {
+      exam: "jee main",
+      year: 2026,
+      subject: "physics",
+      language: "english",
+      totalquestions: 600,
+      batchsize: 5,
+      strictmode: true,
+      outputformat: "json",
     },
-    "metadata": {
-      "version": "1.0",
-      "totalcategories": 7,
-      "totalchapters": 20,
-      "difficultyratio": "30% easy : 50% moderate : 20% hard",
-      "questiontyperatio": "60% single : 20% multiple : 20% numerical",
-      "note": "each chapter's difficultydistribution and questiontypedistribution must each sum exactly to that chapter's questioncount (30). category questioncounts sum to totalquestions (600)."
+    metadata: {
+      version: "1.0",
+      totalcategories: 7,
+      totalchapters: 20,
+      difficultyratio: "30% easy : 50% moderate : 20% hard",
+      questiontyperatio: "60% single : 20% multiple : 20% numerical",
+      note: "each chapter's difficultydistribution and questiontypedistribution must each sum exactly to that chapter's questioncount (30). category questioncounts sum to totalquestions (600).",
     },
-    "categories": [
+    categories: [
       {
-        "id": 1,
-        "name": "mechanics",
-        "questioncount": 210,
-        "chapters": [
+        id: 1,
+        name: "mechanics",
+        questioncount: 210,
+        chapters: [
           {
-            "id": 1,
-            "name": "units & measurements",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 1,
+            name: "units & measurements",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "units",
-                "subtopics": [
+                name: "units",
+                subtopics: [
                   "units of measurement; system of units; si units",
-                  "fundamental and derived units"
+                  "fundamental and derived units",
                 ],
-                "id": 1
+                id: 1,
               },
               {
-                "name": "errors & significant figures",
-                "subtopics": [
+                name: "errors & significant figures",
+                subtopics: [
                   "least count; significant figures",
                   "errors in measurements; absolute, relative and percentage error",
-                  "combination of errors in arithmetic operations"
+                  "combination of errors in arithmetic operations",
                 ],
-                "id": 2
+                id: 2,
               },
               {
-                "name": "dimensions",
-                "subtopics": [
+                name: "dimensions",
+                subtopics: [
                   "dimensions of physical quantities",
-                  "dimensional analysis and its applications"
+                  "dimensional analysis and its applications",
                 ],
-                "id": 3
-              }
-            ]
+                id: 3,
+              },
+            ],
           },
           {
-            "id": 2,
-            "name": "kinematics",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 2,
+            name: "kinematics",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "1d motion",
-                "subtopics": [
+                name: "1d motion",
+                subtopics: [
                   "frame of reference; motion in a straight line",
                   "speed and velocity; uniform and non-uniform motion",
                   "average speed and instantaneous velocity",
                   "uniformly accelerated motion; equations of motion in a straight line",
                   "velocity-time and position-time graphs",
-                  "relative velocity"
+                  "relative velocity",
                 ],
-                "id": 4
+                id: 4,
               },
               {
-                "name": "2d motion",
-                "subtopics": [
+                name: "2d motion",
+                subtopics: [
                   "motion in a plane; cases of uniform velocity and uniform acceleration",
                   "projectile motion",
-                  "uniform circular motion"
+                  "uniform circular motion",
                 ],
-                "id": 5
-              }
-            ]
+                id: 5,
+              },
+            ],
           },
           {
-            "id": 3,
-            "name": "laws of motion",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 3,
+            name: "laws of motion",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "newton's laws",
-                "subtopics": [
+                name: "newton's laws",
+                subtopics: [
                   "force and inertia; newton's first law of motion",
                   "momentum; newton's second law of motion; impulse",
-                  "newton's third law of motion"
+                  "newton's third law of motion",
                 ],
-                "id": 6
+                id: 6,
               },
               {
-                "name": "conservation",
-                "subtopics": [
-                  "law of conservation of linear momentum and its applications"
+                name: "conservation",
+                subtopics: [
+                  "law of conservation of linear momentum and its applications",
                 ],
-                "id": 7
+                id: 7,
               },
               {
-                "name": "equilibrium-phy",
-                "subtopics": [
-                  "equilibrium of concurrent forces"
-                ],
-                "id": null
+                name: "equilibrium-phy",
+                subtopics: ["equilibrium of concurrent forces"],
+                id: null,
               },
               {
-                "name": "friction",
-                "subtopics": [
+                name: "friction",
+                subtopics: [
                   "static and kinetic friction; laws of friction",
-                  "rolling friction"
+                  "rolling friction",
                 ],
-                "id": 9
+                id: 9,
               },
               {
-                "name": "circular motion",
-                "subtopics": [
+                name: "circular motion",
+                subtopics: [
                   "dynamics of uniform circular motion; centripetal force",
-                  "motion of a vehicle on a level road and a banked road"
+                  "motion of a vehicle on a level road and a banked road",
                 ],
-                "id": 10
-              }
-            ]
+                id: 10,
+              },
+            ],
           },
           {
-            "id": 4,
-            "name": "work, energy & power",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 4,
+            name: "work, energy & power",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "work",
-                "subtopics": [
+                name: "work",
+                subtopics: [
                   "work done by a constant and a variable force",
-                  "work-energy theorem"
+                  "work-energy theorem",
                 ],
-                "id": 11
+                id: 11,
               },
               {
-                "name": "energy",
-                "subtopics": [
+                name: "energy",
+                subtopics: [
                   "kinetic energy; potential energy",
                   "potential energy of a spring",
                   "conservation of mechanical energy",
                   "conservative and non-conservative forces",
-                  "motion in a vertical circle"
+                  "motion in a vertical circle",
                 ],
-                "id": 12
+                id: 12,
               },
               {
-                "name": "power",
-                "subtopics": [
-                  "definition and calculation of power"
-                ],
-                "id": 13
+                name: "power",
+                subtopics: ["definition and calculation of power"],
+                id: 13,
               },
               {
-                "name": "collisions",
-                "subtopics": [
-                  "elastic and inelastic collisions in one and two dimensions"
+                name: "collisions",
+                subtopics: [
+                  "elastic and inelastic collisions in one and two dimensions",
                 ],
-                "id": 14
-              }
-            ]
+                id: 14,
+              },
+            ],
           },
           {
-            "id": 5,
-            "name": "rotational motion",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 5,
+            name: "rotational motion",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "centre of mass",
-                "subtopics": [
+                name: "centre of mass",
+                subtopics: [
                   "centre of mass of a two-particle system",
-                  "centre of mass of a rigid body"
+                  "centre of mass of a rigid body",
                 ],
-                "id": 15
+                id: 15,
               },
               {
-                "name": "rotational concepts",
-                "subtopics": [
+                name: "rotational concepts",
+                subtopics: [
                   "moment of a force; torque; angular momentum",
-                  "conservation of angular momentum and its applications"
+                  "conservation of angular momentum and its applications",
                 ],
-                "id": 16
+                id: 16,
               },
               {
-                "name": "moment of inertia",
-                "subtopics": [
+                name: "moment of inertia",
+                subtopics: [
                   "definition of moment of inertia; radius of gyration",
                   "values for simple geometrical objects (ring, disc, cylinder, sphere, rod)",
-                  "parallel axes and perpendicular axes theorems"
+                  "parallel axes and perpendicular axes theorems",
                 ],
-                "id": 17
+                id: 17,
               },
               {
-                "name": "equations of motion",
-                "subtopics": [
-                  "equations of rotational motion; rolling motion"
-                ],
-                "id": 18
+                name: "equations of motion",
+                subtopics: ["equations of rotational motion; rolling motion"],
+                id: 18,
               },
               {
-                "name": "equilibrium-rotation",
-                "subtopics": [
-                  "equilibrium of rigid bodies; conditions for equilibrium"
+                name: "equilibrium-rotation",
+                subtopics: [
+                  "equilibrium of rigid bodies; conditions for equilibrium",
                 ],
-                "id": 19
-              }
-            ]
+                id: 19,
+              },
+            ],
           },
           {
-            "id": 6,
-            "name": "gravitation",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 6,
+            name: "gravitation",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "gravitation-basics",
-                "subtopics": [
-                  "universal law of gravitation; gravitational constant"
+                name: "gravitation-basics",
+                subtopics: [
+                  "universal law of gravitation; gravitational constant",
                 ],
-                "id": 20
+                id: 20,
               },
               {
-                "name": "variation of g",
-                "subtopics": [
-                  "variation of acceleration due to gravity with altitude and depth"
+                name: "variation of g",
+                subtopics: [
+                  "variation of acceleration due to gravity with altitude and depth",
                 ],
-                "id": 21
+                id: 21,
               },
               {
-                "name": "planetary motion",
-                "subtopics": [
-                  "kepler's laws of planetary motion"
-                ],
-                "id": 22
+                name: "planetary motion",
+                subtopics: ["kepler's laws of planetary motion"],
+                id: 22,
               },
               {
-                "name": "gravitational potential & energy",
-                "subtopics": [
-                  "gravitational potential energy; gravitational potential"
+                name: "gravitational potential & energy",
+                subtopics: [
+                  "gravitational potential energy; gravitational potential",
                 ],
-                "id": null
+                id: null,
               },
               {
-                "name": "satellites",
-                "subtopics": [
+                name: "satellites",
+                subtopics: [
                   "escape velocity; orbital velocity of a satellite",
-                  "time period and energy of a satellite in circular orbit"
+                  "time period and energy of a satellite in circular orbit",
                 ],
-                "id": 24
-              }
-            ]
+                id: 24,
+              },
+            ],
           },
           {
-            "id": 7,
-            "name": "properties of solids & liquids",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 7,
+            name: "properties of solids & liquids",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "elasticity",
-                "subtopics": [
+                name: "elasticity",
+                subtopics: [
                   "elastic behaviour of solids; stress-strain relationship; hooke's law",
-                  "young's modulus; bulk modulus; modulus of rigidity"
+                  "young's modulus; bulk modulus; modulus of rigidity",
                 ],
-                "id": 25
+                id: 25,
               },
               {
-                "name": "fluid statics",
-                "subtopics": [
+                name: "fluid statics",
+                subtopics: [
                   "pressure due to a fluid column; pascal's law and its applications",
-                  "effect of gravity on fluid pressure; archimedes' principle; buoyancy"
+                  "effect of gravity on fluid pressure; archimedes' principle; buoyancy",
                 ],
-                "id": 26
+                id: 26,
               },
               {
-                "name": "fluid dynamics",
-                "subtopics": [
+                name: "fluid dynamics",
+                subtopics: [
                   "viscosity; stokes' law; terminal velocity",
                   "streamline and turbulent flow; reynolds number; critical velocity",
-                  "bernoulli's theorem and its applications"
+                  "bernoulli's theorem and its applications",
                 ],
-                "id": 27
+                id: 27,
               },
               {
-                "name": "surface tension",
-                "subtopics": [
+                name: "surface tension",
+                subtopics: [
                   "surface energy and surface tension; cohesion and adhesion",
                   "angle of contact; excess pressure in a curved liquid surface",
-                  "application to drops, bubbles and capillary rise"
+                  "application to drops, bubbles and capillary rise",
                 ],
-                "id": 28
+                id: 28,
               },
               {
-                "name": "heat & calorimetry",
-                "subtopics": [
+                name: "heat & calorimetry",
+                subtopics: [
                   "heat, temperature; thermal expansion of solids, liquids and gases",
-                  "specific heat capacity; calorimetry; latent heat"
+                  "specific heat capacity; calorimetry; latent heat",
                 ],
-                "id": 29
+                id: 29,
               },
               {
-                "name": "heat transfer",
-                "subtopics": [
+                name: "heat transfer",
+                subtopics: [
                   "modes of heat transfer: conduction, convection and radiation",
-                  "newton's law of cooling; stefan's law; wien's displacement law"
+                  "newton's law of cooling; stefan's law; wien's displacement law",
                 ],
-                "id": 30
-              }
-            ]
-          }
-        ]
+                id: 30,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": null,
-        "name": "thermodynamics-phy",
-        "questioncount": 60,
-        "chapters": [
+        id: null,
+        name: "thermodynamics-phy",
+        questioncount: 60,
+        chapters: [
           {
-            "id": null,
-            "name": "thermodynamics-phy",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: null,
+            name: "thermodynamics-phy",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "thermodynamics-basics",
-                "subtopics": [
-                  "thermal equilibrium; definition of temperature; zeroth law of thermodynamics"
+                name: "thermodynamics-basics",
+                subtopics: [
+                  "thermal equilibrium; definition of temperature; zeroth law of thermodynamics",
                 ],
-                "id": 31
+                id: 31,
               },
               {
-                "name": "first law",
-                "subtopics": [
+                name: "first law",
+                subtopics: [
                   "heat, work and internal energy; first law of thermodynamics",
-                  "isothermal and adiabatic processes"
+                  "isothermal and adiabatic processes",
                 ],
-                "id": 32
+                id: 32,
               },
               {
-                "name": "second law",
-                "subtopics": [
+                name: "second law",
+                subtopics: [
                   "second law of thermodynamics; reversible and irreversible processes",
-                  "carnot engine; efficiency of carnot cycle; heat pumps and refrigerators"
+                  "carnot engine; efficiency of carnot cycle; heat pumps and refrigerators",
                 ],
-                "id": 33
-              }
-            ]
+                id: 33,
+              },
+            ],
           },
           {
-            "id": null,
-            "name": "kinetic-theory-of-gases-phy",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: null,
+            name: "kinetic-theory-of-gases-phy",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "kinetic-theory-of-gases-basics",
-                "subtopics": [
-                  "equation of state of a perfect gas; work done on compressing a gas"
+                name: "kinetic-theory-of-gases-basics",
+                subtopics: [
+                  "equation of state of a perfect gas; work done on compressing a gas",
                 ],
-                "id": 34
+                id: 34,
               },
               {
-                "name": "kinetic theory",
-                "subtopics": [
+                name: "kinetic theory",
+                subtopics: [
                   "assumptions of kinetic theory of gases; concept of pressure",
                   "kinetic interpretation of temperature; rms speed of gas molecules",
                   "degrees of freedom; law of equipartition of energy",
                   "specific heat capacities of gases (cp, cv); relationship between them",
-                  "mean free path; avogadro's number"
+                  "mean free path; avogadro's number",
                 ],
-                "id": 35
-              }
-            ]
-          }
-        ]
+                id: 35,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": 3,
-        "name": "oscillations & waves",
-        "questioncount": 30,
-        "chapters": [
+        id: 3,
+        name: "oscillations & waves",
+        questioncount: 30,
+        chapters: [
           {
-            "id": 10,
-            "name": "oscillations & waves",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 10,
+            name: "oscillations & waves",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "oscillations",
-                "subtopics": [
+                name: "oscillations",
+                subtopics: [
                   "periodic motion: time period, frequency and periodic functions",
                   "simple harmonic motion (shm): equation of motion, phase",
                   "oscillations of a spring: force constant; energy in shm",
-                  "simple pendulum: derivation of expression for time period"
+                  "simple pendulum: derivation of expression for time period",
                 ],
-                "id": 36
+                id: 36,
               },
               {
-                "name": "waves",
-                "subtopics": [
+                name: "waves",
+                subtopics: [
                   "wave motion: longitudinal and transverse waves; speed of a wave",
                   "displacement relation for a progressive wave",
                   "principle of superposition of waves; reflection of waves at rigid and free boundaries",
                   "standing waves in strings and organ pipes; fundamental mode and harmonics",
-                  "beats"
+                  "beats",
                 ],
-                "id": 37
-              }
-            ]
-          }
-        ]
+                id: 37,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": 4,
-        "name": "electromagnetism",
-        "questioncount": 150,
-        "chapters": [
+        id: 4,
+        name: "electromagnetism",
+        questioncount: 150,
+        chapters: [
           {
-            "id": 11,
-            "name": "electrostatics",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 11,
+            name: "electrostatics",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "charge & forces",
-                "subtopics": [
+                name: "charge & forces",
+                subtopics: [
                   "conservation of charge; coulomb's law; forces between multiple charges",
-                  "superposition principle; continuous charge distribution"
+                  "superposition principle; continuous charge distribution",
                 ],
-                "id": 38
+                id: 38,
               },
               {
-                "name": "electric field",
-                "subtopics": [
+                name: "electric field",
+                subtopics: [
                   "electric field due to a point charge; electric field lines",
-                  "electric dipole; electric field due to a dipole; torque on a dipole in uniform field"
+                  "electric dipole; electric field due to a dipole; torque on a dipole in uniform field",
                 ],
-                "id": 39
+                id: 39,
               },
               {
-                "name": "gauss's law",
-                "subtopics": [
+                name: "gauss's law",
+                subtopics: [
                   "electric flux; gauss's law and its applications",
-                  "field due to: infinitely long straight wire, uniformly charged infinite plane sheet, uniformly charged thin spherical shell"
+                  "field due to: infinitely long straight wire, uniformly charged infinite plane sheet, uniformly charged thin spherical shell",
                 ],
-                "id": 40
+                id: 40,
               },
               {
-                "name": "electrostatic potential & energy",
-                "subtopics": [
+                name: "electrostatic potential & energy",
+                subtopics: [
                   "electric potential due to a point charge, an electric dipole and a system of charges",
                   "potential difference; equipotential surfaces; relation between e and v",
-                  "electrical potential energy of a system of two point charges; potential energy of a dipole in an external field"
+                  "electrical potential energy of a system of two point charges; potential energy of a dipole in an external field",
                 ],
-                "id": null
+                id: null,
               },
               {
-                "name": "capacitors",
-                "subtopics": [
+                name: "capacitors",
+                subtopics: [
                   "dielectrics and electric polarisation",
                   "capacitance of a parallel plate capacitor with and without dielectric medium",
                   "combination of capacitors in series and parallel",
-                  "energy stored in a capacitor; energy density"
+                  "energy stored in a capacitor; energy density",
                 ],
-                "id": 42
-              }
-            ]
+                id: 42,
+              },
+            ],
           },
           {
-            "id": 12,
-            "name": "current electricity",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 12,
+            name: "current electricity",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "current electricity basics",
-                "subtopics": [
+                name: "current electricity basics",
+                subtopics: [
                   "drift velocity; mobility and their relation with electric current",
                   "ohm's law; electrical resistance; v-i characteristics (linear and non-linear)",
-                  "electrical energy and power; electrical resistivity and conductivity"
+                  "electrical energy and power; electrical resistivity and conductivity",
                 ],
-                "id": null
+                id: null,
               },
               {
-                "name": "circuits",
-                "subtopics": [
+                name: "circuits",
+                subtopics: [
                   "series and parallel combinations of resistors; equivalent resistance",
                   "temperature dependence of resistance",
                   "internal resistance; emf; terminal voltage; combination of cells in series and parallel",
-                  "kirchhoff's laws and their applications; wheatstone bridge; metre bridge"
+                  "kirchhoff's laws and their applications; wheatstone bridge; metre bridge",
                 ],
-                "id": 44
-              }
-            ]
+                id: 44,
+              },
+            ],
           },
           {
-            "id": 13,
-            "name": "magnetic effects & magnetism",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 13,
+            name: "magnetic effects & magnetism",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "biot-savart & ampere",
-                "subtopics": [
+                name: "biot-savart & ampere",
+                subtopics: [
                   "biot-savart law and its application to a current-carrying circular loop",
-                  "ampere's law and its applications to an infinitely long wire and a solenoid"
+                  "ampere's law and its applications to an infinitely long wire and a solenoid",
                 ],
-                "id": 45
+                id: 45,
               },
               {
-                "name": "force on charge/conductor",
-                "subtopics": [
+                name: "force on charge/conductor",
+                subtopics: [
                   "force on a moving charge in uniform magnetic and electric fields; cyclotron",
                   "force on a current-carrying conductor in a uniform magnetic field",
-                  "force between two parallel current-carrying conductors; definition of ampere"
+                  "force between two parallel current-carrying conductors; definition of ampere",
                 ],
-                "id": 46
+                id: 46,
               },
               {
-                "name": "galvanometer",
-                "subtopics": [
+                name: "galvanometer",
+                subtopics: [
                   "torque on a current loop in a uniform magnetic field; moving coil galvanometer",
-                  "conversion of galvanometer to ammeter and voltmeter; their use"
+                  "conversion of galvanometer to ammeter and voltmeter; their use",
                 ],
-                "id": 47
+                id: 47,
               },
               {
-                "name": "magnetism",
-                "subtopics": [
+                name: "magnetism",
+                subtopics: [
                   "current loop as a magnetic dipole; magnetic dipole moment; bar magnet as an equivalent solenoid",
                   "magnetic field due to a bar magnet along its axis and perpendicular bisector",
                   "torque on a magnetic dipole in a uniform magnetic field",
-                  "para-, dia- and ferromagnetic substances; effect of temperature on magnetic properties"
+                  "para-, dia- and ferromagnetic substances; effect of temperature on magnetic properties",
                 ],
-                "id": 48
-              }
-            ]
+                id: 48,
+              },
+            ],
           },
           {
-            "id": 14,
-            "name": "electromagnetic induction & ac",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 14,
+            name: "electromagnetic induction & ac",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "emi",
-                "subtopics": [
+                name: "emi",
+                subtopics: [
                   "electromagnetic induction; faraday's law; induced emf and current; lenz's law",
-                  "eddy currents and their applications; self-inductance and mutual inductance"
+                  "eddy currents and their applications; self-inductance and mutual inductance",
                 ],
-                "id": 49
+                id: 49,
               },
               {
-                "name": "ac circuits",
-                "subtopics": [
+                name: "ac circuits",
+                subtopics: [
                   "peak and rms values of alternating current and voltage",
                   "reactance and impedance; lcr series circuit; resonance; power factor",
-                  "power in ac circuits; wattless current"
+                  "power in ac circuits; wattless current",
                 ],
-                "id": 50
+                id: 50,
               },
               {
-                "name": "devices",
-                "subtopics": [
+                name: "devices",
+                subtopics: [
                   "ac generator: principle and working",
-                  "transformer: principle, working, efficiency and uses"
+                  "transformer: principle, working, efficiency and uses",
                 ],
-                "id": 51
-              }
-            ]
+                id: 51,
+              },
+            ],
           },
           {
-            "id": 15,
-            "name": "electromagnetic waves",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 15,
+            name: "electromagnetic waves",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "electromagnetic waves basics",
-                "subtopics": [
+                name: "electromagnetic waves basics",
+                subtopics: [
                   "displacement current; need for modification of ampere's law",
-                  "electromagnetic waves: characteristics, transverse nature; speed in vacuum"
+                  "electromagnetic waves: characteristics, transverse nature; speed in vacuum",
                 ],
-                "id": null
+                id: null,
               },
               {
-                "name": "spectrum",
-                "subtopics": [
+                name: "spectrum",
+                subtopics: [
                   "electromagnetic spectrum: radio waves, microwaves, infrared, visible, ultraviolet, x-rays, gamma rays",
-                  "approximate wavelengths and applications of different electromagnetic waves"
+                  "approximate wavelengths and applications of different electromagnetic waves",
                 ],
-                "id": 53
-              }
-            ]
-          }
-        ]
+                id: 53,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": 5,
-        "name": "optics",
-        "questioncount": 30,
-        "chapters": [
+        id: 5,
+        name: "optics",
+        questioncount: 30,
+        chapters: [
           {
-            "id": 16,
-            "name": "optics",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 16,
+            name: "optics",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "ray optics",
-                "subtopics": [
+                name: "ray optics",
+                subtopics: [
                   "reflection of light; spherical mirrors; mirror formula",
                   "refraction of light at plane and spherical surfaces; refractive index",
                   "thin lens formula; lens maker's formula; magnification; power of a lens",
                   "total internal reflection and its applications",
                   "combination of thin lenses in contact; equivalent focal length",
-                  "refraction of light through a prism; dispersion of light; rainbow"
+                  "refraction of light through a prism; dispersion of light; rainbow",
                 ],
-                "id": 54
+                id: 54,
               },
               {
-                "name": "optical instruments",
-                "subtopics": [
+                name: "optical instruments",
+                subtopics: [
                   "compound microscope: magnifying power",
-                  "astronomical telescope (reflecting and refracting): magnifying power"
+                  "astronomical telescope (reflecting and refracting): magnifying power",
                 ],
-                "id": 55
+                id: 55,
               },
               {
-                "name": "wave optics",
-                "subtopics": [
+                name: "wave optics",
+                subtopics: [
                   "wavefront and huygens' principle",
                   "laws of reflection and refraction using huygens' principle",
                   "interference: young's double-slit experiment; fringe width; coherent sources; sustained interference",
                   "diffraction due to a single slit; width of central maximum",
-                  "polarisation: plane-polarised light; brewster's law; polaroids"
+                  "polarisation: plane-polarised light; brewster's law; polaroids",
                 ],
-                "id": 56
-              }
-            ]
-          }
-        ]
+                id: 56,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": 6,
-        "name": "modern physics",
-        "questioncount": 90,
-        "chapters": [
+        id: 6,
+        name: "modern physics",
+        questioncount: 90,
+        chapters: [
           {
-            "id": 17,
-            "name": "dual nature of matter & radiation",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 17,
+            name: "dual nature of matter & radiation",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "photoelectric effect",
-                "subtopics": [
+                name: "photoelectric effect",
+                subtopics: [
                   "hertz and lenard's observations on photoelectric effect",
-                  "einstein's photoelectric equation; particle nature of light; work function; threshold frequency"
+                  "einstein's photoelectric equation; particle nature of light; work function; threshold frequency",
                 ],
-                "id": 57
+                id: 57,
               },
               {
-                "name": "matter waves",
-                "subtopics": [
-                  "wave nature of matter particles; de broglie relation; de broglie wavelength of an electron"
+                name: "matter waves",
+                subtopics: [
+                  "wave nature of matter particles; de broglie relation; de broglie wavelength of an electron",
                 ],
-                "id": 58
-              }
-            ]
+                id: 58,
+              },
+            ],
           },
           {
-            "id": 18,
-            "name": "atoms & nuclei",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 18,
+            name: "atoms & nuclei",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "atomic models",
-                "subtopics": [
+                name: "atomic models",
+                subtopics: [
                   "alpha-particle scattering experiment; rutherford's model of the atom",
-                  "bohr model of the hydrogen atom; energy levels; spectral series of hydrogen"
+                  "bohr model of the hydrogen atom; energy levels; spectral series of hydrogen",
                 ],
-                "id": 59
+                id: 59,
               },
               {
-                "name": "nucleus",
-                "subtopics": [
+                name: "nucleus",
+                subtopics: [
                   "composition and size of nucleus; atomic masses; isotopes, isobars and isotones",
                   "radioactivity: alpha, beta and gamma particles; laws of radioactive decay; half-life",
                   "mass-energy relation; mass defect; binding energy per nucleon",
                   "variation of binding energy with mass number; nuclear stability",
-                  "nuclear fission and nuclear fusion; energy released"
+                  "nuclear fission and nuclear fusion; energy released",
                 ],
-                "id": 60
-              }
-            ]
+                id: 60,
+              },
+            ],
           },
           {
-            "id": 19,
-            "name": "electronic devices",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 19,
+            name: "electronic devices",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "semiconductors",
-                "subtopics": [
+                name: "semiconductors",
+                subtopics: [
                   "semiconductor diode: i-v characteristics in forward and reverse bias",
-                  "diode as a rectifier; half-wave and full-wave rectification"
+                  "diode as a rectifier; half-wave and full-wave rectification",
                 ],
-                "id": 61
+                id: 61,
               },
               {
-                "name": "special diodes",
-                "subtopics": [
+                name: "special diodes",
+                subtopics: [
                   "i-v characteristics of led, photodiode and solar cell",
-                  "zener diode; zener diode as a voltage regulator"
+                  "zener diode; zener diode as a voltage regulator",
                 ],
-                "id": 62
+                id: 62,
               },
               {
-                "name": "logic gates",
-                "subtopics": [
-                  "or, and, not, nand and nor gates; truth tables; boolean expressions"
+                name: "logic gates",
+                subtopics: [
+                  "or, and, not, nand and nor gates; truth tables; boolean expressions",
                 ],
-                "id": 63
-              }
-            ]
-          }
-        ]
+                id: 63,
+              },
+            ],
+          },
+        ],
       },
       {
-        "id": 7,
-        "name": "experimental skills",
-        "questioncount": 30,
-        "chapters": [
+        id: 7,
+        name: "experimental skills",
+        questioncount: 30,
+        chapters: [
           {
-            "id": 20,
-            "name": "experimental skills",
-            "questioncount": 30,
-            "generationconfig": {
-              "batchsize": 5,
-              "difficultydistribution": {
-                "easy": 9,
-                "moderate": 15,
-                "hard": 6
+            id: 20,
+            name: "experimental skills",
+            questioncount: 30,
+            generationconfig: {
+              batchsize: 5,
+              difficultydistribution: {
+                easy: 9,
+                moderate: 15,
+                hard: 6,
               },
-              "questiontypedistribution": {
-                "single": 18,
-                "multiple": 6,
-                "numerical": 6
-              }
+              questiontypedistribution: {
+                single: 18,
+                multiple: 6,
+                numerical: 6,
+              },
             },
-            "topics": [
+            topics: [
               {
-                "name": "length measurement",
-                "subtopics": [
+                name: "length measurement",
+                subtopics: [
                   "vernier calipers: measuring internal/external diameter and depth of a vessel",
-                  "screw gauge: measuring thickness/diameter of thin sheet or wire"
+                  "screw gauge: measuring thickness/diameter of thin sheet or wire",
                 ],
-                "id": 64
+                id: 64,
               },
               {
-                "name": "mechanics",
-                "subtopics": [
+                name: "mechanics",
+                subtopics: [
                   "simple pendulum: plotting l vs t² graph; energy dissipation",
-                  "metre scale: measuring mass by principle of moments"
+                  "metre scale: measuring mass by principle of moments",
                 ],
-                "id": 65
+                id: 65,
               },
               {
-                "name": "material properties",
-                "subtopics": [
+                name: "material properties",
+                subtopics: [
                   "young's modulus of elasticity of material of a metallic wire",
                   "surface tension of water by capillary rise method; effect of detergents",
-                  "coefficient of viscosity by stokes' terminal velocity method"
+                  "coefficient of viscosity by stokes' terminal velocity method",
                 ],
-                "id": 66
+                id: 66,
               },
               {
-                "name": "waves & sound",
-                "subtopics": [
-                  "speed of sound in air using resonance tube; two-resonance method"
+                name: "waves & sound",
+                subtopics: [
+                  "speed of sound in air using resonance tube; two-resonance method",
                 ],
-                "id": 67
+                id: 67,
               },
               {
-                "name": "heat",
-                "subtopics": [
-                  "specific heat capacity of solid and liquid by method of mixtures"
+                name: "heat",
+                subtopics: [
+                  "specific heat capacity of solid and liquid by method of mixtures",
                 ],
-                "id": 68
+                id: 68,
               },
               {
-                "name": "electricity",
-                "subtopics": [
+                name: "electricity",
+                subtopics: [
                   "resistivity of material of wire using metre bridge; verification of ohm's law",
-                  "resistance of galvanometer by half-deflection method; figure of merit"
+                  "resistance of galvanometer by half-deflection method; figure of merit",
                 ],
-                "id": 69
+                id: 69,
               },
               {
-                "name": "optics",
-                "subtopics": [
+                name: "optics",
+                subtopics: [
                   "focal length of convex mirror, concave mirror and convex lens using parallax method",
                   "angle of deviation vs. angle of incidence for a triangular prism",
-                  "refractive index of glass slab using travelling microscope"
+                  "refractive index of glass slab using travelling microscope",
                 ],
-                "id": 70
+                id: 70,
               },
               {
-                "name": "electronics",
-                "subtopics": [
+                name: "electronics",
+                subtopics: [
                   "characteristic curves of p-n junction diode in forward and reverse bias",
                   "characteristic curves of zener diode; determination of reverse breakdown voltage",
-                  "identification of diode, led, resistor and capacitor from a mixed collection"
+                  "identification of diode, led, resistor and capacitor from a mixed collection",
                 ],
-                "id": 71
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "questiondistribution": {
-      "difficulty": {
-        "easy": 180,
-        "moderate": 300,
-        "hard": 120
+                id: 71,
+              },
+            ],
+          },
+        ],
       },
-      "questiontype": {
-        "single": 360,
-        "multiple": 120,
-        "numerical": 120
-      }
+    ],
+    questiondistribution: {
+      difficulty: {
+        easy: 180,
+        moderate: 300,
+        hard: 120,
+      },
+      questiontype: {
+        single: 360,
+        multiple: 120,
+        numerical: 120,
+      },
     },
-    "responseschema": {
-      "requiredfields": [
+    responseschema: {
+      requiredfields: [
         "role",
         "question",
         "optiontype",
@@ -1094,35 +1086,28 @@ const jsonData = [
         "category",
         "chapter",
         "topic",
-        "subtopic"
+        "subtopic",
       ],
-      "fieldconstraints": {
-        "optiontype": [
-          "Single",
-          "Multiple",
-          "Numerical"
-        ],
-        "role": "admin",
-        "inputBox": "",
-        "difficultylevel": [
-          "easy",
-          "moderate",
-          "hard"
-        ],
-        "subject": "physics",
-        "options": {
-          "Single": "array of exactly 4 choices (a, b, c, d)",
-          "Multiple": "array of exactly 4 choices (a, b, c, d); one or more may be correct",
-          "Numerical": "empty string; answer is a numeric value in a string"
+      fieldconstraints: {
+        optiontype: ["Single", "Multiple", "Numerical"],
+        role: "admin",
+        inputBox: "",
+        difficultylevel: ["easy", "moderate", "hard"],
+        subject: "physics",
+        options: {
+          Single: "array of exactly 4 choices (a, b, c, d)",
+          Multiple:
+            "array of exactly 4 choices (a, b, c, d); one or more may be correct",
+          Numerical: "empty string; answer is a numeric value in a string",
         },
-        "correctanswer": {
-          "Single": "single option key, e.g. 'a'",
-          "Multiple": "array of correct option keys, e.g. ['a', 'c']",
-          "Numerical": "numeric value as a string, e.g. '4.50'"
-        }
-      }
-    }
-  }
+        correctanswer: {
+          Single: "single option key, e.g. 'a'",
+          Multiple: "array of correct option keys, e.g. ['a', 'c']",
+          Numerical: "numeric value as a string, e.g. '4.50'",
+        },
+      },
+    },
+  },
 ];
 
 // Extract the categories array (nested inside data[0].data[0])
@@ -1130,27 +1115,27 @@ const jsonData = [
 const data = jsonData[0]; // since it's an array with one element
 
 if (!data) {
-  console.error('Invalid data structure');
+  console.error("Invalid data structure");
 } else {
   const categories = data.categories || [];
   const rows = [];
 
-  categories.forEach(category => {
-    const categoryName = category.name || 'Unknown Category';
-    (category.chapters || []).forEach(chapter => {
-      const chapterName = chapter.name || 'Unknown Chapter';
-      (chapter.topics || []).forEach(topic => {
-        const topicName = topic.name || 'Unknown Topic';
+  categories.forEach((category) => {
+    const categoryName = category.name || "Unknown Category";
+    (category.chapters || []).forEach((chapter) => {
+      const chapterName = chapter.name || "Unknown Chapter";
+      (chapter.topics || []).forEach((topic) => {
+        const topicName = topic.name || "Unknown Topic";
         const subtopics = topic.subtopics || [];
 
         if (subtopics.length > 0) {
           // Each subtopic becomes its own row
-          subtopics.forEach(sub => {
+          subtopics.forEach((sub) => {
             rows.push({
               Category: categoryName,
               Chapter: chapterName,
               Topic: topicName,
-              Subtopic: sub
+              Subtopic: sub,
             });
           });
         } else {
@@ -1159,7 +1144,7 @@ if (!data) {
             Category: categoryName,
             Chapter: chapterName,
             Topic: topicName,
-            Subtopic: ''
+            Subtopic: "",
           });
         }
       });
@@ -1169,3 +1154,44 @@ if (!data) {
   // Display the table in the console
   console.table(rows);
 }
+
+//TODO:
+
+/**
+ *
+ * 1. generation.config.totalquestions
+ * 2. totalapicalls
+ * 3.
+ *
+ *
+ *
+ *
+ */
+
+const changeObj = {
+  generationconfig: {
+    totalquestions: -6,
+    totalapicalls: -1,
+  },
+  categories: [
+    {
+      questioncount: null,
+      apicalls: null,
+      chapters: [{
+        generationconfig: {
+          batchsize: -1, 
+          difficultydistribution: {
+            easy: -2,
+            moderate: -3,
+            hard: -1,
+          },
+          questiontypedistribution: {
+            single: -4,
+            multiple: -1,
+            numerical: -1,
+          },
+        }
+      }],
+    },
+  ],
+};
