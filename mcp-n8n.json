@@ -1,0 +1,12 @@
+
+{
+  "mcpServers": {
+    "n8n-mcp": {
+      "type": "http",
+      "url": "http://localhost:5678/mcp-server/http",
+      "headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZTBjYzNjYy0xMzY2LTRjNWMtYjJiMS1hMWYwMGU4YjRmZTMiLCJpc3MiOiJuOG4iLCJhdWQiOiJtY3Atc2VydmVyLWFwaSIsImp0aSI6IjU3MGZiZGVjLWUzYWMtNGJjMy05OTg5LWU2YTdjN2QzOTdlMCIsImlhdCI6MTc4MzY3MTEwMH0.PVSo0dkC_ZGzdlRGxoJSzm3V4oNvZPrVgf1ZH4ZWG-g"
+      }
+    }
+  }
+}
