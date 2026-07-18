@@ -1,0 +1,98 @@
+{
+  "question": "<p>In a new system of units, the unit of force is 100 N, the unit of length is 10 m, and the unit of time is 1 minute. What is the numerical value of 1 J of energy expressed in this new system?</p>",
+  "explanation": "<p>Energy has dimensions Mass of the first point object involved in the gravitational interaction.. Using dimensional analysis, the conversion factor is:</p><p>Mass of the second point object involved in the gravitational interaction.</p><p>Here Initial gravitational force between the two point masses when separated by a distance R., Initial distance between the two point masses., Half of the initial gravitational force; an incorrect answer choice.. Substituting:</p><p>One-fourth of the initial gravitational force; the correct answer when the distance between the masses is doubled.</p><p>Twice the initial gravitational force; an incorrect answer choice.</p><p>So 1 J = Four times the initial gravitational force; an incorrect answer choice. in the new unit system.</p>",
+  "hint": "<p>Use the dimensional formula Mass of the first point object involved in the gravitational interaction. and apply the relation between old and new units using the conversion: Newton's law of gravitation showing that gravitational force is inversely proportional to the square of the distance between the masses..</p>",
+  "optionType": "single",
+  "difficultyLevel": "hard",
+  "options": [
+    {
+      "name": "<p>The new distance between the two point masses after the original distance is doubled.</p>",
+      "isCorrect": false
+    },
+    {
+      "name": "<p>Four times the initial gravitational force; an incorrect answer choice.</p>",
+      "isCorrect": true
+    },
+    {
+      "name": "<p>The new gravitational force after the distance between the masses is doubled.</p>",
+      "isCorrect": false
+    },
+    {
+      "name": "<p>Derivation showing how the new gravitational force is calculated when the separation distance is doubled.</p>",
+      "isCorrect": false
+    }
+  ],
+  "images": [],
+  "subjectIds": [1],
+  "subjectCategoryIds": [1],
+  "chapterIds": [1],
+  "topicIds": [1],
+  "examCategoryIds": [1],
+  "latex": [
+    {
+      "key": 0,
+      "expression": "m_1",
+      "description": "Mass of the first point object involved in the gravitational interaction."
+    },
+    {
+      "key": 1,
+      "expression": "m_2",
+      "description": "Mass of the second point object involved in the gravitational interaction."
+    },
+    {
+      "key": 2,
+      "expression": "F",
+      "description": "Initial gravitational force between the two point masses when separated by a distance R."
+    },
+    {
+      "key": 3,
+      "expression": "R",
+      "description": "Initial distance between the two point masses."
+    },
+    {
+      "key": 4,
+      "expression": "\\frac{F}{2}",
+      "description": "Half of the initial gravitational force; an incorrect answer choice."
+    },
+    {
+      "key": 5,
+      "expression": "\\frac{F}{4}",
+      "description": "One-fourth of the initial gravitational force; the correct answer when the distance between the masses is doubled."
+    },
+    {
+      "key": 6,
+      "expression": "2F",
+      "description": "Twice the initial gravitational force; an incorrect answer choice."
+    },
+    {
+      "key": 7,
+      "expression": "4F",
+      "description": "Four times the initial gravitational force; an incorrect answer choice."
+    },
+    {
+      "key": 8,
+      "expression": "F \\propto \\frac{1}{R^2}",
+      "description": "Newton's law of gravitation showing that gravitational force is inversely proportional to the square of the distance between the masses."
+    },
+    {
+      "key": 9,
+      "expression": "2R",
+      "description": "The new distance between the two point masses after the original distance is doubled."
+    },
+    {
+      "key": 10,
+      "expression": "F'",
+      "description": "The new gravitational force after the distance between the masses is doubled."
+    },
+    {
+      "key": 11,
+      "expression": "F' = \\frac{1}{(2R)^2} \\times F = \\frac{1}{4R^2} \\times F",
+      "description": "Derivation showing how the new gravitational force is calculated when the separation distance is doubled."
+    },
+    {
+      "key": 12,
+      "expression": "F' = \\frac{F}{4}",
+      "description": "Final result showing that doubling the distance reduces the gravitational force to one-fourth of its original value."
+    }
+  ]
+}

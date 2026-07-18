@@ -21,8 +21,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        768,
-        1824
+        704,
+        1776
       ],
       "id": "a5b70d76-2696-41ff-9061-5089d97762f3",
       "name": "Loop Over Batches",
@@ -37,7 +37,7 @@
       "typeVersion": 1.1,
       "position": [
         1344,
-        1840
+        1872
       ],
       "id": "0ffa188a-4c31-4f76-b941-171246bd541d",
       "name": "Wait Before Gemini Call",
@@ -53,7 +53,7 @@
           "parameters": [
             {
               "name": "key",
-              "value": "AQ.Ab8RN6LBKROUG98NYVyc5bjeOyDi6C4cxFEBej0tLHZkX7iRxQ"
+              "value": "AQ.Ab8RN6LLAwRznhKq-La5TXMhQSQAB0WJrzoGdOVIgz_ajb1WNw"
             }
           ]
         },
@@ -87,13 +87,13 @@
     },
     {
       "parameters": {
-        "jsCode": "const item = $input.first().json;\n\nconst {\n  categoryId,\n  categoryName,\n  chapterId,\n  chapterName,\n  topicId,\n  topicName,\n  subtopicsName = [],\n  optionType,\n  difficultyLevel,\n  questionNumber = 6,\n  perbatchdistribution,\n  responseSchema = {}\n} = item;\n\nconsole.log(\"item\", item);\n\n// Extract the distribution from the new JSON format\nconst questionTypeDistribution = optionType;\nconst difficultyDistribution = difficultyLevel;\n\nconst systemPrompt = `\nYou are an expert JEE Main Physics question setter, examiner, and psychometric analyst.\n\nGenerate EXACTLY ${questionNumber} unique JEE Main Physics questions.\n\n═══════════════════════════════════════\nCONTEXT\n═══════════════════════════════════════\n\nCategory: ${categoryName}\nChapter: ${chapterName}\nTopic: ${topicName}\n\nSubtopics:\n${subtopicsName.join(\"\\n\")}\n\n═══════════════════════════════════════\nQUESTION DISTRIBUTION\n═══════════════════════════════════════\n\nYou must generate EXACTLY:\n\nBy Difficulty:\n- ${difficultyDistribution.easy} easy questions\n- ${difficultyDistribution.moderate} moderate questions\n- ${difficultyDistribution.hard} hard questions\n\nBy Question Type:\n- ${questionTypeDistribution.single} Single Choice questions (exactly 4 options, 1 correct)\n- ${questionTypeDistribution.multiple} Multiple Choice questions (exactly 4 options, 1+ correct)\n- ${questionTypeDistribution.numerical} Numerical questions (numeric answer)\n\nTotal: ${questionNumber} questions\n\n═══════════════════════════════════════\nQUESTION REQUIREMENTS\n═══════════════════════════════════════\n\n1. Generate EXACTLY ${questionNumber} questions with the exact distribution specified above.\n2. Use ONLY the provided subtopics.\n3. Follow JEE Main standards strictly.\n4. Questions must test conceptual understanding, not rote memorization.\n5. Avoid duplicate concepts, formulas, numerical values, and question patterns.\n6. Use realistic Physics values and units.\n7. Explanation must clearly justify the correct answer step-by-step.\n8. Never reveal chain-of-thought reasoning.\n9. Output ONLY valid JSON. Do NOT wrap output in markdown or code fences.\n10. Every question must belong to Category: ${categoryName}, Chapter: ${chapterName}, Topic: ${topicName}.\n11. Tag each question with the correct difficulty and type according to the distribution.\n\n═══════════════════════════════════════\nQUESTION TYPE RULES\n═══════════════════════════════════════\n\nSingle:\n- Exactly 4 options\n- Exactly 1 correct option (isCorrect: true)\n- optionType: \"Single\"\n\nMultiple:\n- Exactly 4 options\n- One or more correct options\n- optionType: \"Multiple\"\n\nNumerical:\n- No options array\n- optionType: \"Numerical\"\n- inputbox must be an empty string \"\"\n- Answer must be a numeric value\n\n═══════════════════════════════════════\nHTML RULES\n═══════════════════════════════════════\n\nAllowed tags ONLY: <p> <b> <i> <sub> <sup>\n\nFORBIDDEN tags: <div> <table> <style> <script> <svg> <span> <br> <ul> <li> <ol>\n\nDo NOT use Unicode math symbols anywhere:\n  WRONG: ×, ÷, →, ←, ≤, ≥, ≠, α, β, γ, ², ³, √, ∞, Δ, θ, π, μ, ω, λ\n  RIGHT: Use {{latex[n]}} placeholder instead\n\nDo NOT use superscripts or subscripts as plain HTML for math:\n  WRONG: v<sup>2</sup>  OR  x<sub>0</sub>\n  RIGHT: {{latex[n]}} where latex[n] = \"v^{2}\"  OR  \"x_{0}\"\n\n═══════════════════════════════════════\nMATH TOKENIZATION — CRITICAL RULES\n═══════════════════════════════════════\n\nRULE 1 — EXTRACT ALL MATH TO LATEX ARRAY\nEvery mathematical expression MUST be extracted into the top-level \"latex\" array.\nReplace it in question/explanation/hint/options with {{latex[n]}}.\n\nRULE 2 — NEVER EMBED MATH IN HTML\nNEVER write math directly inside question, explanation, hint, or options[].name.\n\nRULE 3 — VALID JSON ESCAPING (MOST COMMON BUG)\nLaTeX backslashes MUST be double-escaped in JSON strings.\n  WRONG (breaks JSON):  \"\\\\frac{1}{2}mv^{2}\"   ← single backslash\n  CORRECT:              \"\\\\\\\\frac{1}{2}mv^{2}\"  ← double backslash\n\nWait — in a JSON string value, a single LaTeX backslash becomes two characters: \\\\ \nSo in the raw JSON you write:\n  \"latex\": [\"\\\\frac{1}{2}mv^{2}\"]\nWhich represents the LaTeX string: \\frac{1}{2}mv^{2}  ✓\n\nRULE 4 — LATEX SYNTAX MUST BE VALID\nUse standard LaTeX. Every command must use correct syntax:\n\nFractions:        \\\\frac{numerator}{denominator}\nSquare root:      \\\\sqrt{expression}\nNth root:         \\\\sqrt[n]{expression}\nPowers:           x^{2}  OR  x^{10}   (always use braces for multi-char exponents)\nSubscripts:       x_{0}  OR  v_{max}  (always use braces)\nGreek letters:    \\\\alpha  \\\\beta  \\\\gamma  \\\\delta  \\\\theta  \\\\phi  \\\\omega  \\\\lambda  \\\\mu  \\\\pi  \\\\eta  \\\\rho  \\\\sigma\nVectors:          \\\\vec{F}  OR  \\\\hat{n}\nAbsolute value:   |x|  OR  \\\\left|x\\\\right|\nParentheses:      \\\\left( ... \\\\right)\nBrackets:         \\\\left[ ... \\\\right]\nMultiplication:   \\\\times  OR  \\\\cdot\nDivision:         \\\\div\nArrows:           \\\\rightarrow  \\\\leftarrow  \\\\Rightarrow\nApprox:           \\\\approx\nNot equal:        \\\\neq\nLess/greater:     \\\\leq  \\\\geq\nInfinity:         \\\\infty\nIntegral:         \\\\int_{a}^{b} f(x)\\\\,dx\nSum:              \\\\sum_{i=1}^{n}\nPartial:          \\\\frac{\\\\partial f}{\\\\partial x}\nProportional:     \\\\propto\nDegree symbol:    30^{\\\\circ}\nUnits in math:    \\\\text{m/s}  OR  \\\\mathrm{kg}\nScientific nota:  3.0 \\\\times 10^{8}\n\nRULE 5 — PHYSICS UNIT FORMATTING\nUnits that appear inside equations must be in \\\\text{} or \\\\mathrm{}:\n  CORRECT: \"v = 3.0 \\\\times 10^{8} \\\\text{ m/s}\"\n  CORRECT: \"F = 10 \\\\text{ N}\"\n\nUnits that appear as plain text in HTML do NOT need tokenization:\n  CORRECT in HTML: <p>A force of 10 N acts on...</p>\n\nRULE 6 — DEDUPLICATION\nIf the same mathematical expression appears more than once across question, explanation, hint, and options, reuse the SAME placeholder index.\n  WRONG: latex[3] = \"mv^{2}\" and latex[7] = \"mv^{2}\"  ← duplicate\n  RIGHT: both use {{latex[3]}}\n\nRULE 7 — ORDERED BY FIRST APPEARANCE\nThe latex array must be ordered by the first appearance of each expression in this order:\n  question → options → hint → explanation\n\nRULE 8 — EVERY OBJECT MUST HAVE LATEX KEY\nEvery question object must include \"latex\": []\nIf a question has no math at all, use \"latex\": []\n\nRULE 9 — PLACEHOLDER FORMAT\nPlaceholders are always: {{latex[0]}}  {{latex[1]}}  {{latex[2]}} etc.\nIndex must be a valid integer referencing an existing entry in the latex array.\nNo placeholder may reference an index that doesn't exist.\n\nRULE 10 — WHAT COUNTS AS MATH (must be tokenized)\n- Any equation, formula, or expression\n- Fractions, roots, powers, subscripts\n- Greek letters (α β γ θ etc.)\n- Vectors, unit vectors\n- Trigonometric expressions: sin, cos, tan, sin²θ etc.\n- Logarithms: log, ln, log₁₀\n- Scientific notation: 3×10⁸\n- Dimensional formulas: [MLT⁻²]\n- Physics symbols in equations: F, v, a, E, B, etc. when part of an expression\n- Coordinates: (x₁, y₁)\n- Matrices and determinants\n- Inequalities with symbols\n- Integrals, derivatives, partial derivatives\n- Anything with ², ³, √, Δ, ∑, ∫\n\nRULE 11 — WHAT DOES NOT NEED TOKENIZATION\n- Plain integers or decimals used as text: \"A rod of length 5 m\"\n- Named quantities in text: \"A particle of mass m moves...\"  ← 'm' here is text\n- Numbered lists or answer choices as plain letters: A, B, C, D\n\nRULE 12 — LATEX MUST CONTAIN ONLY MATHEMATICS\nStore only mathematical expressions in the latex array.\n\nFORBIDDEN:\n- \\\\text{(1)}, \\\\text{(2)}, equation numbers\n- Labels, step numbers\n- Explanatory text\n- Sentences or words\n\nWRONG:\n\"a+c=1 \\\\quad \\\\text{(1)}\"\n\nCORRECT:\n\"a+c=1\"\n\nRULE 13 — DIMENSIONS\nDefault: M, L, T notation without square brackets.\n\nCORRECT:\n\"M^{-1}L^{3}T^{-2}\"\n\nALLOWED ONLY IF REQUIRED BY THE QUESTION:\n\"[M^{-1}L^{3}T^{-2}]\"\n\n═══════════════════════════════════════\nEXAMPLES OF CORRECT LATEX IN JSON\n═══════════════════════════════════════\n\nExample 1 — Kinematic equation:\n\"latex\": [\n  \"v^{2} = u^{2} + 2as\",\n  \"v\",\n  \"u\",\n  \"a\",\n  \"s\"\n]\n\nExample 2 — Energy formula:\n\"latex\": [\n  \"E = \\\\frac{1}{2}mv^{2}\",\n  \"m\",\n  \"v\"\n]\n\nExample 3 — Dimensional analysis:\n\"latex\": [\n  \"[M^{1}L^{1}T^{-2}]\",\n  \"[M^{0}L^{1}T^{-1}]\",\n  \"F = \\\\frac{Gm_{1}m_{2}}{r^{2}}\"\n]\n\nExample 4 — Trigonometry:\n\"latex\": [\n  \"\\\\sin^{2}\\\\theta + \\\\cos^{2}\\\\theta = 1\",\n  \"\\\\tan\\\\theta = \\\\frac{\\\\sin\\\\theta}{\\\\cos\\\\theta}\"\n]\n\nExample 5 — Vectors:\n\"latex\": [\n  \"\\\\vec{F} = m\\\\vec{a}\",\n  \"\\\\vec{v} = \\\\vec{u} + \\\\vec{a}t\"\n]\n\nExample 6 — Fractions with Greek:\n\"latex\": [\n  \"\\\\omega = \\\\frac{2\\\\pi}{T}\",\n  \"T\",\n  \"\\\\omega\"\n]\n\nExample 7 — Full question structure (Single):\n{\n  \"question\": \"<p>A body of mass {{latex[0]}} moves with velocity {{latex[1]}}. Its kinetic energy is:</p>\",\n  \"options\": [\n    { \"name\": \"<p>{{latex[2]}}</p>\", \"isCorrect\": false },\n    { \"name\": \"<p>{{latex[3]}}</p>\", \"isCorrect\": true },\n    { \"name\": \"<p>{{latex[4]}}</p>\", \"isCorrect\": false },\n    { \"name\": \"<p>{{latex[5]}}</p>\", \"isCorrect\": false }\n  ],\n  \"hint\": \"<p>Recall the formula for kinetic energy: {{latex[3]}}.</p>\",\n  \"explanation\": \"<p>Kinetic energy is given by {{latex[3]}}. Substituting {{latex[0]}} and {{latex[1]}}, we get the result.</p>\",\n  \"latex\": [\n    \"m\",\n    \"v\",\n    \"\\\\frac{1}{4}mv^{2}\",\n    \"\\\\frac{1}{2}mv^{2}\",\n    \"mv^{2}\",\n    \"2mv^{2}\"\n  ],\n  \"optionType\": \"Single\",\n  \"difficultyLevel\": \"easy\"\n}\n\nExample 8 — Numerical question:\n{\n  \"question\": \"<p>Calculate the value of {{latex[0]}} if {{latex[1]}}.</p>\",\n  \"hint\": \"<p>Use the formula {{latex[2]}}.</p>\",\n  \"explanation\": \"<p>Substituting the values gives {{latex[3]}}.</p>\",\n  \"latex\": [\n    \"g\",\n    \"g = 9.8 \\\\text{ m/s}^{2}\",\n    \"F = mg\",\n    \"F = 98 \\\\text{ N}\"\n  ],\n  \"optionType\": \"Numerical\",\n  \"difficultyLevel\": \"moderate\",\n  \"inputbox\": \"\"\n}\n\n═══════════════════════════════════════\nFINAL VALIDATION CHECKLIST\n═══════════════════════════════════════\n\nBefore outputting, verify every question:\n\n[ ] Array length is EXACTLY ${questionNumber}\n[ ] Distribution matches: ${difficultyDistribution.easy} easy, ${difficultyDistribution.moderate} moderate, ${difficultyDistribution.hard} hard\n[ ] Distribution matches: ${questionTypeDistribution.single} single, ${questionTypeDistribution.multiple} multiple, ${questionTypeDistribution.numerical} numerical\n[ ] JSON is valid and parseable\n[ ] All questions are unique\n[ ] All match Category, Chapter, Topic\n[ ] Every question has: question, explanation, hint, options/answer, latex, images, subjectIds, subjectCategoryIds, chapterIds, topicIds, examCategoryIds\n[ ] Every {{latex[n]}} references a valid index in the latex array\n[ ] No math is written directly in question/explanation/hint/options HTML\n[ ] latex array contains ONLY valid LaTeX strings with double-escaped backslashes\n[ ] No Unicode math symbols (×, →, ², α, etc.) appear anywhere in HTML\n[ ] Duplicate expressions reuse the same placeholder index\n[ ] latex array is ordered by first appearance\n[ ] Every question contains \"role\": \"admin\"\n[ ] Numerical questions contain inputbox as an empty string\n[ ] Single/Multiple questions contain options array with exactly 4 options\n\nReturn ONLY a valid JSON array. No markdown. No code fences. No explanation text.\n`;\n\n// Create a flexible output schema that can handle different question types\nconst createOutputSchema = (type, difficulty) => {\n  const baseSchema = {\n    question: \"<p>Question HTML</p>\",\n    explanation: \"<p>Explanation HTML</p>\",\n    hint: \"<p>Hint HTML</p>\",\n    optionType: type,\n    difficultyLevel: difficulty,\n    role: \"admin\",\n    ...(type === \"Numerical\"\n      ? { inputbox: \"\" }\n      : {\n          options: [\n            {\n              name: \"Option A\",\n              isCorrect: false\n            },\n            {\n              name: \"Option B\",\n              isCorrect: true\n            },\n            {\n              name: \"Option C\",\n              isCorrect: false\n            },\n            {\n              name: \"Option D\",\n              isCorrect: false\n            }\n          ]\n        }),\n    images: [],\n    subjectIds: [1],\n    subjectCategoryIds: [categoryId],\n    chapterIds: [chapterId],\n    topicIds: [topicId],\n    examCategoryIds: [1]\n  };\n  return baseSchema;\n};\n\n// Create a sample schema showing the mix\nconst sampleSchemas = [];\nsampleSchemas.push(createOutputSchema(\"Single\", \"easy\"));\nsampleSchemas.push(createOutputSchema(\"Multiple\", \"moderate\"));\nsampleSchemas.push(createOutputSchema(\"Numerical\", \"hard\"));\n\nconst requestBody = {\n  systemInstruction: {\n    parts: [\n      {\n        text: systemPrompt\n      }\n    ]\n  },\n\n  contents: [\n    {\n      parts: [\n        {\n          text: \"EXAM INFORMATION\"\n        },\n        {\n          text: \"Exam: JEE Main\"\n        },\n        {\n          text: \"Subject: Physics\"\n        },\n        {\n          text: `Category: ${categoryName}`\n        },\n        {\n          text: `Chapter: ${chapterName}`\n        },\n        {\n          text: `Topic: ${topicName}`\n        },\n        {\n          text: `SubTopics: ${subtopicsName.join(\", \")}`\n        }\n      ]\n    },\n\n    {\n      parts: [\n        {\n          text: \"OUTPUT SCHEMA (Example showing mixed types)\"\n        },\n        {\n          text: JSON.stringify(sampleSchemas)\n        }\n      ]\n    },\n\n    {\n      parts: [\n        {\n          text: `FINAL VALIDATION - Generate EXACTLY ${questionNumber} questions with this EXACT distribution:\n\nDifficulty Distribution:\n- ${difficultyDistribution.easy} easy questions\n- ${difficultyDistribution.moderate} moderate questions  \n- ${difficultyDistribution.hard} hard questions\n\nQuestion Type Distribution:\n- ${questionTypeDistribution.single} Single Choice questions\n- ${questionTypeDistribution.multiple} Multiple Choice questions\n- ${questionTypeDistribution.numerical} Numerical questions\n\nReturn ONLY a valid JSON array.\n`\n        }\n      ]\n    }\n  ],\n\n  \"generationConfig\": {\n      \"temperature\": 0.8,\n      \"topP\": 0.95,\n      \"candidateCount\": 1,\n      \"maxOutputTokens\": 20000,\n      \"responseMimeType\": \"application/json\",\n      \"responseSchema\": {\n        \"type\": \"ARRAY\",\n        \"items\": {\n          \"type\": \"OBJECT\",\n          \"properties\": {\n            \"question\": {\n              \"type\": \"STRING\"\n            },\n            \"explanation\": {\n              \"type\": \"STRING\"\n            },\n            \"hint\": {\n              \"type\": \"STRING\"\n            },\n            \"optionType\": {\n              \"type\": \"STRING\",\n              \"enum\": [\n                \"Single\",\n                \"Multiple\",\n                \"Numerical\"\n              ]\n            },\n            \"difficultyLevel\": {\n              \"type\": \"STRING\",\n              \"enum\": [\n                \"easy\",\n                \"moderate\",\n                \"hard\"\n              ]\n            },\n            \"role\": {\n              \"type\": \"STRING\"\n            },\n            \"latex\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"STRING\"\n              }\n            },\n            \"options\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"OBJECT\",\n                \"properties\": {\n                  \"name\": {\n                    \"type\": \"STRING\"\n                  },\n                  \"isCorrect\": {\n                    \"type\": \"BOOLEAN\"\n                  }\n                },\n                \"required\": [\n                  \"name\",\n                  \"isCorrect\"\n                ]\n              }\n            },\n            \"inputBox\": {\n              \"type\": \"STRING\"\n            },\n            \"images\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"STRING\"\n              }\n            },\n            \"subjectIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"subjectCategoryIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"chapterIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"topicIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"examCategoryIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            }\n          },\n          \"required\": [\n            \"question\",\n            \"explanation\",\n            \"latex\",\n            \"hint\",\n            \"optionType\",\n            \"difficultyLevel\",\n            \"role\",\n            \"images\",\n            \"subjectIds\",\n            \"subjectCategoryIds\",\n            \"chapterIds\",\n            \"topicIds\",\n            \"examCategoryIds\"\n          ]\n        }\n      }\n    }\n};\n\nconsole.log(\"requestBody\", requestBody);\nreturn [\n  {\n    json: requestBody\n  }\n];"
+        "jsCode": "const item = $input.first().json;\n\nconst {\n  categoryId,\n  categoryName,\n  chapterId,\n  chapterName,\n  topicId,\n  topicName,\n  subtopicsName = [],\n  optionType,\n  difficultyLevel,\n  questionNumber = 6,\n  perbatchdistribution,\n  responseSchema = {}\n} = item;\n\nconsole.log(\"item\", item);\n\n// Extract the distribution from the new JSON format\nconst questionTypeDistribution = optionType;\nconst difficultyDistribution = difficultyLevel;\n\nconst systemPrompt = `\nYou are an expert JEE Main Physics question setter, examiner, and psychometric analyst.\n\nGenerate EXACTLY ${questionNumber} unique JEE Main Physics questions.\n\n═══════════════════════════════════════\nCONTEXT\n═══════════════════════════════════════\n\nCategory: ${categoryName}\nChapter: ${chapterName}\nTopic: ${topicName}\n\nSubtopics:\n${subtopicsName.join(\"\\n\")}\n\n═══════════════════════════════════════\nQUESTION DISTRIBUTION\n═══════════════════════════════════════\n\nYou must generate EXACTLY:\n\nBy Difficulty:\n- ${difficultyDistribution.easy} easy questions\n- ${difficultyDistribution.moderate} moderate questions\n- ${difficultyDistribution.hard} hard questions\n\nBy Question Type:\n- ${questionTypeDistribution.single} Single Choice questions (exactly 4 options, 1 correct)\n- ${questionTypeDistribution.multiple} Multiple Choice questions (exactly 4 options, 1+ correct)\n- ${questionTypeDistribution.numerical} Numerical questions (numeric answer)\n\nTotal: ${questionNumber} questions\n\n═══════════════════════════════════════\nQUESTION REQUIREMENTS\n═══════════════════════════════════════\n\n1. Generate EXACTLY ${questionNumber} questions with the exact distribution specified above.\n2. Use ONLY the provided subtopics.\n3. Follow JEE Main standards strictly.\n4. Questions must test conceptual understanding, not rote memorization.\n5. Avoid duplicate concepts, formulas, numerical values, and question patterns.\n6. Use realistic Physics values and units.\n7. Explanation must clearly justify the correct answer step-by-step.\n8. Never reveal chain-of-thought reasoning.\n9. Output ONLY valid JSON. Do NOT wrap output in markdown or code fences.\n10. Every question must belong to Category: ${categoryName}, Chapter: ${chapterName}, Topic: ${topicName}.\n11. Tag each question with the correct difficulty and type according to the distribution.\n\n═══════════════════════════════════════\nQUESTION TYPE RULES\n═══════════════════════════════════════\n\nSingle:\n- Exactly 4 options\n- Exactly 1 correct option (isCorrect: true)\n- optionType: \"Single\"\n\nMultiple:\n- Exactly 4 options\n- One or more correct options\n- optionType: \"Multiple\"\n\nNumerical:\n- No options array\n- optionType: \"Numerical\"\n- inputbox must be an empty string \"\"\n- Answer must be a numeric value\n\n═══════════════════════════════════════\nHTML RULES\n═══════════════════════════════════════\n\nAllowed tags ONLY: <p> <b> <i> <sub> <sup>\n\nFORBIDDEN tags: <div> <table> <style> <script> <svg> <span> <br> <ul> <li> <ol>\n\nDo NOT use Unicode math symbols anywhere:\n  WRONG: ×, ÷, →, ←, ≤, ≥, ≠, α, β, γ, ², ³, √, ∞, Δ, θ, π, μ, ω, λ\n  RIGHT: Use {{latex[n]}} placeholder instead\n\nDo NOT use superscripts or subscripts as plain HTML for math:\n  WRONG: v<sup>2</sup>  OR  x<sub>0</sub>\n  RIGHT: {{latex[n]}} where latex[n] = \"v^{2}\"  OR  \"x_{0}\"\n\n═══════════════════════════════════════\nMATH TOKENIZATION — CRITICAL RULES\n═══════════════════════════════════════\n\nRULE 1 — EXTRACT ALL MATH TO LATEX ARRAY\nEvery mathematical expression MUST be extracted into the top-level \"latex\" array.\nReplace it in question/explanation/hint/options with {{latex[n]}}.\n\nRULE 2 — NEVER EMBED MATH IN HTML\nNEVER write math directly inside question, explanation, hint, or options[].name.\n\nRULE 3 — VALID JSON ESCAPING (MOST COMMON BUG)\nLaTeX backslashes MUST be double-escaped in JSON strings.\n  WRONG (breaks JSON):  \"\\\\frac{1}{2}mv^{2}\"   ← single backslash\n  CORRECT:              \"\\\\\\\\frac{1}{2}mv^{2}\"  ← double backslash\n\nWait — in a JSON string value, a single LaTeX backslash becomes two characters: \\\\ \nSo in the raw JSON you write:\n  \"latex\": [\"\\\\frac{1}{2}mv^{2}\"]\nWhich represents the LaTeX string: \\frac{1}{2}mv^{2}  ✓\n\nRULE 4 — LATEX SYNTAX MUST BE VALID\nUse standard LaTeX. Every command must use correct syntax:\n\nFractions:        \\\\frac{numerator}{denominator}\nSquare root:      \\\\sqrt{expression}\nNth root:         \\\\sqrt[n]{expression}\nPowers:           x^{2}  OR  x^{10}   (always use braces for multi-char exponents)\nSubscripts:       x_{0}  OR  v_{max}  (always use braces)\nGreek letters:    \\\\alpha  \\\\beta  \\\\gamma  \\\\delta  \\\\theta  \\\\phi  \\\\omega  \\\\lambda  \\\\mu  \\\\pi  \\\\eta  \\\\rho  \\\\sigma\nVectors:          \\\\vec{F}  OR  \\\\hat{n}\nAbsolute value:   |x|  OR  \\\\left|x\\\\right|\nParentheses:      \\\\left( ... \\\\right)\nBrackets:         \\\\left[ ... \\\\right]\nMultiplication:   \\\\times  OR  \\\\cdot\nDivision:         \\\\div\nArrows:           \\\\rightarrow  \\\\leftarrow  \\\\Rightarrow\nApprox:           \\\\approx\nNot equal:        \\\\neq\nLess/greater:     \\\\leq  \\\\geq\nInfinity:         \\\\infty\nIntegral:         \\\\int_{a}^{b} f(x)\\\\,dx\nSum:              \\\\sum_{i=1}^{n}\nPartial:          \\\\frac{\\\\partial f}{\\\\partial x}\nProportional:     \\\\propto\nDegree symbol:    30^{\\\\circ}\nUnits in math:    \\\\text{m/s}  OR  \\\\mathrm{kg}\nScientific nota:  3.0 \\\\times 10^{8}\n\nRULE 5 — PHYSICS UNIT FORMATTING\nUnits that appear inside equations must be in \\\\text{} or \\\\mathrm{}:\n  CORRECT: \"v = 3.0 \\\\times 10^{8} \\\\text{ m/s}\"\n  CORRECT: \"F = 10 \\\\text{ N}\"\n\nUnits that appear as plain text in HTML do NOT need tokenization:\n  CORRECT in HTML: <p>A force of 10 N acts on...</p>\n\nRULE 6 — DEDUPLICATION\nIf the same mathematical expression appears more than once across question, explanation, hint, and options, reuse the SAME placeholder index.\n  WRONG: latex[3] = \"mv^{2}\" and latex[7] = \"mv^{2}\"  ← duplicate\n  RIGHT: both use {{latex[3]}}\n\nRULE 7 — ORDERED BY FIRST APPEARANCE\nThe latex array must be ordered by the first appearance of each expression in this order:\n  question → options → hint → explanation\n\nRULE 8 — EVERY OBJECT MUST HAVE LATEX KEY\nEvery question object must include \"latex\": []\nIf a question has no math at all, use \"latex\": []\n\nRULE 9 — PLACEHOLDER FORMAT\nPlaceholders are always: {{latex[0]}}  {{latex[1]}}  {{latex[2]}} etc.\nIndex must be a valid integer referencing an existing entry in the latex array.\nNo placeholder may reference an index that doesn't exist.\n\nRULE 10 — WHAT COUNTS AS MATH (must be tokenized)\n- Any equation, formula, or expression\n- Fractions, roots, powers, subscripts\n- Greek letters (α β γ θ etc.)\n- Vectors, unit vectors\n- Trigonometric expressions: sin, cos, tan, sin²θ etc.\n- Logarithms: log, ln, log₁₀\n- Scientific notation: 3×10⁸\n- Dimensional formulas: [MLT⁻²]\n- Physics symbols in equations: F, v, a, E, B, etc. when part of an expression\n- Coordinates: (x₁, y₁)\n- Matrices and determinants\n- Inequalities with symbols\n- Integrals, derivatives, partial derivatives\n- Anything with ², ³, √, Δ, ∑, ∫\n\nRULE 11 — WHAT DOES NOT NEED TOKENIZATION\n- Plain integers or decimals used as text: \"A rod of length 5 m\"\n- Named quantities in text: \"A particle of mass m moves...\"  ← 'm' here is text\n- Numbered lists or answer choices as plain letters: A, B, C, D\n\nRULE 12 — LATEX MUST CONTAIN ONLY MATHEMATICS\nStore only mathematical expressions in the latex array.\n\nFORBIDDEN:\n- \\\\text{(1)}, \\\\text{(2)}, equation numbers\n- Labels, step numbers\n- Explanatory text\n- Sentences or words\n\nWRONG:\n\"a+c=1 \\\\quad \\\\text{(1)}\"\n\nCORRECT:\n\"a+c=1\"\n\nRULE 13 — DIMENSIONS\nDefault: M, L, T notation without square brackets.\n\nCORRECT:\n\"M^{-1}L^{3}T^{-2}\"\n\nALLOWED ONLY IF REQUIRED BY THE QUESTION:\n\"[M^{-1}L^{3}T^{-2}]\"\n\n═══════════════════════════════════════\nEXAMPLES OF CORRECT LATEX IN JSON\n═══════════════════════════════════════\n\nExample 1 — Kinematic equation:\n\"latex\": [\n  \"v^{2} = u^{2} + 2as\",\n  \"v\",\n  \"u\",\n  \"a\",\n  \"s\"\n]\n\nExample 2 — Energy formula:\n\"latex\": [\n  \"E = \\\\frac{1}{2}mv^{2}\",\n  \"m\",\n  \"v\"\n]\n\nExample 3 — Dimensional analysis:\n\"latex\": [\n  \"[M^{1}L^{1}T^{-2}]\",\n  \"[M^{0}L^{1}T^{-1}]\",\n  \"F = \\\\frac{Gm_{1}m_{2}}{r^{2}}\"\n]\n\nExample 4 — Trigonometry:\n\"latex\": [\n  \"\\\\sin^{2}\\\\theta + \\\\cos^{2}\\\\theta = 1\",\n  \"\\\\tan\\\\theta = \\\\frac{\\\\sin\\\\theta}{\\\\cos\\\\theta}\"\n]\n\nExample 5 — Vectors:\n\"latex\": [\n  \"\\\\vec{F} = m\\\\vec{a}\",\n  \"\\\\vec{v} = \\\\vec{u} + \\\\vec{a}t\"\n]\n\nExample 6 — Fractions with Greek:\n\"latex\": [\n  \"\\\\omega = \\\\frac{2\\\\pi}{T}\",\n  \"T\",\n  \"\\\\omega\"\n]\n\nExample 7 — Full question structure (Single):\n{\n  \"question\": \"<p>A body of mass {{latex[0]}} moves with velocity {{latex[1]}}. Its kinetic energy is:</p>\",\n  \"options\": [\n    { \"name\": \"<p>{{latex[2]}}</p>\", \"isCorrect\": false },\n    { \"name\": \"<p>{{latex[3]}}</p>\", \"isCorrect\": true },\n    { \"name\": \"<p>{{latex[4]}}</p>\", \"isCorrect\": false },\n    { \"name\": \"<p>{{latex[5]}}</p>\", \"isCorrect\": false }\n  ],\n  \"hint\": \"<p>Recall the formula for kinetic energy: {{latex[3]}}.</p>\",\n  \"explanation\": \"<p>Kinetic energy is given by {{latex[3]}}. Substituting {{latex[0]}} and {{latex[1]}}, we get the result.</p>\",\n  \"latex\": [\n    \"m\",\n    \"v\",\n    \"\\\\frac{1}{4}mv^{2}\",\n    \"\\\\frac{1}{2}mv^{2}\",\n    \"mv^{2}\",\n    \"2mv^{2}\"\n  ],\n  \"optionType\": \"Single\",\n  \"difficultyLevel\": \"easy\"\n}\n\nExample 8 — Numerical question:\n{\n  \"question\": \"<p>Calculate the value of {{latex[0]}} if {{latex[1]}}.</p>\",\n  \"hint\": \"<p>Use the formula {{latex[2]}}.</p>\",\n  \"explanation\": \"<p>Substituting the values gives {{latex[3]}}.</p>\",\n  \"latex\": [\n    \"g\",\n    \"g = 9.8 \\\\text{ m/s}^{2}\",\n    \"F = mg\",\n    \"F = 98 \\\\text{ N}\"\n  ],\n  \"optionType\": \"Numerical\",\n  \"difficultyLevel\": \"moderate\",\n  \"inputbox\": \"\"\n}\n\n═══════════════════════════════════════\nFINAL VALIDATION CHECKLIST\n═══════════════════════════════════════\n\nBefore outputting, verify every question:\n\n[ ] Array length is EXACTLY ${questionNumber}\n[ ] Distribution matches: ${difficultyDistribution.easy} easy, ${difficultyDistribution.moderate} moderate, ${difficultyDistribution.hard} hard\n[ ] Distribution matches: ${questionTypeDistribution.single} single, ${questionTypeDistribution.multiple} multiple, ${questionTypeDistribution.numerical} numerical\n[ ] JSON is valid and parseable\n[ ] All questions are unique\n[ ] All match Category, Chapter, Topic\n[ ] Every question has: question, explanation, hint, options/answer, latex, images, subjectIds, subjectCategoryIds, chapterIds, topicIds, examCategoryIds\n[ ] Every {{latex[n]}} references a valid index in the latex array\n[ ] No math is written directly in question/explanation/hint/options HTML\n[ ] latex array contains ONLY valid LaTeX strings with double-escaped backslashes\n[ ] No Unicode math symbols (×, →, ², α, etc.) appear anywhere in HTML\n[ ] Duplicate expressions reuse the same placeholder index\n[ ] latex array is ordered by first appearance\n[ ] Every question contains \"role\": \"admin\"\n[ ] Numerical questions contain inputbox as an empty string\n[ ] Single/Multiple questions contain options array with exactly 4 options\n• Same derivation\n• Same numerical values\n• Same physical situation\n• Same formula application\n• Same reasoning\n\nReturn ONLY a valid JSON array. No markdown. No code fences. No explanation text.\n`;\n\n// Create a flexible output schema that can handle different question types\nconst createOutputSchema = (type, difficulty) => {\n  const baseSchema = {\n    question: \"<p>Question HTML</p>\",\n    explanation: \"<p>Explanation HTML</p>\",\n    hint: \"<p>Hint HTML</p>\",\n    optionType: type,\n    difficultyLevel: difficulty,\n    role: \"admin\",\n    ...(type === \"Numerical\"\n      ? { inputbox: \"\" }\n      : {\n          options: [\n            {\n              name: \"Option A\",\n              isCorrect: false\n            },\n            {\n              name: \"Option B\",\n              isCorrect: true\n            },\n            {\n              name: \"Option C\",\n              isCorrect: false\n            },\n            {\n              name: \"Option D\",\n              isCorrect: false\n            }\n          ]\n        }),\n    images: [],\n    subjectIds: [1],\n    subjectCategoryIds: [categoryId],\n    chapterIds: [chapterId],\n    topicIds: [topicId],\n    examCategoryIds: [1]\n  };\n  return baseSchema;\n};\n\n// Create a sample schema showing the mix\nconst sampleSchemas = [];\nsampleSchemas.push(createOutputSchema(\"Single\", \"easy\"));\nsampleSchemas.push(createOutputSchema(\"Multiple\", \"moderate\"));\nsampleSchemas.push(createOutputSchema(\"Numerical\", \"hard\"));\n\nconst requestBody = {\n  systemInstruction: {\n    parts: [\n      {\n        text: systemPrompt\n      }\n    ]\n  },\n\n  contents: [\n    {\n      parts: [\n        {\n          text: \"EXAM INFORMATION\"\n        },\n        {\n          text: \"Exam: JEE Main\"\n        },\n        {\n          text: \"Subject: Physics\"\n        },\n        {\n          text: `Category: ${categoryName}`\n        },\n        {\n          text: `Chapter: ${chapterName}`\n        },\n        {\n          text: `Topic: ${topicName}`\n        },\n        {\n          text: `SubTopics: ${subtopicsName.join(\", \")}`\n        }\n      ]\n    },\n\n    {\n      parts: [\n        {\n          text: \"OUTPUT SCHEMA (Example showing mixed types)\"\n        },\n        {\n          text: JSON.stringify(sampleSchemas)\n        }\n      ]\n    },\n\n    {\n      parts: [\n        {\n          text: `FINAL VALIDATION - Generate EXACTLY ${questionNumber} questions with this EXACT distribution:\n\nDifficulty Distribution:\n- ${difficultyDistribution.easy} easy questions\n- ${difficultyDistribution.moderate} moderate questions  \n- ${difficultyDistribution.hard} hard questions\n\nQuestion Type Distribution:\n- ${questionTypeDistribution.single} Single Choice questions\n- ${questionTypeDistribution.multiple} Multiple Choice questions\n- ${questionTypeDistribution.numerical} Numerical questions\n\nReturn ONLY a valid JSON array.\n`\n        }\n      ]\n    }\n  ],\n\n  \"generationConfig\": {\n      \"temperature\": 0.8,\n      \"topP\": 0.95,\n      \"candidateCount\": 1,\n      \"maxOutputTokens\": 20000,\n      \"responseMimeType\": \"application/json\",\n      \"responseSchema\": {\n        \"type\": \"ARRAY\",\n        \"items\": {\n          \"type\": \"OBJECT\",\n          \"properties\": {\n            \"question\": {\n              \"type\": \"STRING\"\n            },\n            \"explanation\": {\n              \"type\": \"STRING\"\n            },\n            \"hint\": {\n              \"type\": \"STRING\"\n            },\n            \"optionType\": {\n              \"type\": \"STRING\",\n              \"enum\": [\n                \"Single\",\n                \"Multiple\",\n                \"Numerical\"\n              ]\n            },\n            \"difficultyLevel\": {\n              \"type\": \"STRING\",\n              \"enum\": [\n                \"easy\",\n                \"moderate\",\n                \"hard\"\n              ]\n            },\n            \"role\": {\n              \"type\": \"STRING\"\n            },\n            \"latex\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"STRING\"\n              }\n            },\n            \"options\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"OBJECT\",\n                \"properties\": {\n                  \"name\": {\n                    \"type\": \"STRING\"\n                  },\n                  \"isCorrect\": {\n                    \"type\": \"BOOLEAN\"\n                  }\n                },\n                \"required\": [\n                  \"name\",\n                  \"isCorrect\"\n                ]\n              }\n            },\n            \"inputBox\": {\n              \"type\": \"STRING\"\n            },\n            \"images\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"STRING\"\n              }\n            },\n            \"subjectIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"subjectCategoryIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"chapterIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"topicIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            },\n            \"examCategoryIds\": {\n              \"type\": \"ARRAY\",\n              \"items\": {\n                \"type\": \"INTEGER\"\n              }\n            }\n          },\n          \"required\": [\n            \"question\",\n            \"explanation\",\n            \"latex\",\n            \"hint\",\n            \"optionType\",\n            \"difficultyLevel\",\n            \"role\",\n            \"images\",\n            \"subjectIds\",\n            \"subjectCategoryIds\",\n            \"chapterIds\",\n            \"topicIds\",\n            \"examCategoryIds\"\n          ]\n        }\n      }\n    }\n};\n\nconsole.log(\"requestBody\", requestBody);\nreturn [\n  {\n    json: requestBody\n  }\n];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1088,
-        1840
+        1072,
+        1856
       ],
       "id": "7925b1f6-979c-4a55-aa95-bf34ae09196a",
       "name": "Build Gemini Prompt & Request"
@@ -276,8 +276,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        5520,
-        1456
+        5232,
+        1424
       ],
       "id": "80968a88-7a53-4c9c-b06b-93435bd0d5e4",
       "name": "Gate: Has LaTeX Questions"
@@ -552,8 +552,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.3,
       "position": [
-        5088,
-        1712
+        4672,
+        1776
       ],
       "id": "2cb8aaf6-f8ce-4589-b2e6-6ca2e75782db",
       "name": "Gate: Has Non-LaTeX Questions"
@@ -688,7 +688,7 @@
     },
     {
       "parameters": {
-        "amount": 2,
+        "amount": 6,
         "unit": "minutes"
       },
       "type": "n8n-nodes-base.wait",
@@ -719,13 +719,13 @@
     },
     {
       "parameters": {
-        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+        "jsCode": "\nconst isLast = $input.context['noItemsLeft'];\nconsole.log(\"isLast\", isLast)\nif (isLast) {\n    return [{\n        json: {\n            status: \"Loop Complete\"\n        }\n    }];\n}\n\nreturn [];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1184,
-        1728
+        1072,
+        1696
       ],
       "id": "4bf119ba-6302-44c7-b63a-136503edf970",
       "name": "Finalize Loop Output"
@@ -739,8 +739,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -1808,
-        1792
+        -2000,
+        1328
       ],
       "id": "7042226e-654b-41b1-b0fe-86553dac1c88",
       "name": "Set Generation Config"
@@ -752,8 +752,8 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -736,
-        1808
+        -928,
+        1344
       ],
       "id": "2ade1e69-e418-4648-a853-d910c28f1973",
       "name": "Map Names to DB IDs"
@@ -769,8 +769,8 @@
       "type": "n8n-nodes-base.postgres",
       "typeVersion": 2.6,
       "position": [
-        -1248,
-        1856
+        -1440,
+        1392
       ],
       "id": "0011c233-5403-4703-87ee-b8203e792e81",
       "name": "Fetch Category/Chapter/Topic IDs",
@@ -788,8 +788,8 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 3.2,
       "position": [
-        -1008,
-        1680
+        -1200,
+        1216
       ],
       "id": "d58b0184-a1d4-4323-960f-aaebb9bb683d",
       "name": "Merge Config & DB Lookup",
@@ -946,7 +946,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.4,
       "position": [
-        1856,
+        1824,
         2096
       ]
     },
@@ -1031,8 +1031,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        2128,
-        2176
+        2016,
+        2192
       ],
       "notes": "Deterministic client errors (400/401/403/404/409/413/422) and unknown statuses terminate here — never retried."
     },
@@ -1086,8 +1086,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        6208,
-        1856
+        6032,
+        1888
       ],
       "id": "c9527d62-76e9-46b5-8132-918405513313",
       "name": "Edit Fields"
@@ -1142,6 +1142,60 @@
       ],
       "id": "aa376db9-5b37-4429-b7d1-a36180bbaaac",
       "name": "Map Names to DB IDs1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "key",
+              "value": "AQ.Ab8RN6KvqGOYKIcbX7HAKeGgogSFxWV-GNxmbhnrFo6p8mtohw"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -3488,
+        2080
+      ],
+      "id": "4f08117d-cd84-47a5-bb3c-a7563feba8af",
+      "name": "Generate Questions (Gemini)1",
+      "retryOnFail": true,
+      "waitBetweenTries": 3000,
+      "notesInFlow": false,
+      "alwaysOutputData": true,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// n8n Code Node\n\nfunction decodeHtml(str) {\n  return str\n    .replace(/&nbsp;/g, \" \")\n    .replace(/&amp;/g, \"&\")\n    .replace(/&lt;/g, \"<\")\n    .replace(/&gt;/g, \">\")\n    .replace(/&quot;/g, '\"')\n    .replace(/&#39;/g, \"'\");\n}\n\nfunction stripHtml(html) {\n  return html\n    .replace(/<\\/?(p|div|span|strong|b|i|em|ul|ol|li|br)[^>]*>/gi, \" \")\n    .replace(/<[^>]+>/g, \" \");\n}\n\nfunction mathmlToText(mathml) {\n  // Remove namespace\n  mathml = mathml.replace(/xmlns=\"[^\"]*\"/g, \"\");\n\n  // Fractions\n  mathml = mathml.replace(\n    /<mfrac>([\\s\\S]*?)<\\/mfrac>/g,\n    (_, inner) => {\n      const parts = inner.match(/<mrow>[\\s\\S]*?<\\/mrow>|<(?:mi|mn|mo)>[\\s\\S]*?<\\/(?:mi|mn|mo)>/g);\n      if (!parts || parts.length < 2) return \"\";\n      return `(${stripTags(parts[0])})/(${stripTags(parts[1])})`;\n    }\n  );\n\n  // Superscript\n  mathml = mathml.replace(\n    /<msup>([\\s\\S]*?)<\\/msup>/g,\n    (_, inner) => {\n      const p = inner.match(/<(?:mi|mn|mo)>[\\s\\S]*?<\\/(?:mi|mn|mo)>/g);\n      if (!p || p.length < 2) return \"\";\n      return `${stripTags(p[0])}^(${stripTags(p[1])})`;\n    }\n  );\n\n  // Subscript\n  mathml = mathml.replace(\n    /<msub>([\\s\\S]*?)<\\/msub>/g,\n    (_, inner) => {\n      const p = inner.match(/<(?:mi|mn|mo)>[\\s\\S]*?<\\/(?:mi|mn|mo)>/g);\n      if (!p || p.length < 2) return \"\";\n      return `${stripTags(p[0])}_${stripTags(p[1])}`;\n    }\n  );\n\n  // Square root\n  mathml = mathml.replace(\n    /<msqrt>([\\s\\S]*?)<\\/msqrt>/g,\n    (_, inner) => `sqrt(${stripTags(inner)})`\n  );\n\n  // Identifiers\n  mathml = mathml.replace(/<mi>(.*?)<\\/mi>/g, \"$1\");\n\n  // Numbers\n  mathml = mathml.replace(/<mn>(.*?)<\\/mn>/g, \"$1\");\n\n  // Operators\n  mathml = mathml.replace(/<mo>(.*?)<\\/mo>/g, \"$1\");\n\n  // Remove remaining tags\n  mathml = stripTags(mathml);\n\n  return mathml;\n}\n\nfunction stripTags(str) {\n  return str.replace(/<[^>]+>/g, \" \");\n}\n\nfunction cleanText(str) {\n  return decodeHtml(stripHtml(str))\n    .replace(/\\s+/g, \" \")\n    .trim();\n}\n\nfunction processField(html) {\n  if (!html) return \"\";\n\n  // Replace every MathML block\n  html = html.replace(\n    /<math[\\s\\S]*?<\\/math>/gi,\n    (match) => mathmlToText(match)\n  );\n\n  return cleanText(html);\n}\n\nreturn items.map(item => {\n\n  const q = item.json;\n\n  const subject =\n    q.subjects?.map(x => x.name).join(\", \") || \"\";\n\n  const chapter =\n    q.chapters?.map(x => x.name).join(\", \") || \"\";\n\n  const topic =\n    q.topics?.map(x => x.name).join(\", \") || \"\";\n\n  const category =\n    q.subjectCategories?.map(x => x.name).join(\", \") || \"\";\n\n  const options = (q.options || [])\n    .map(o => processField(o.name))\n    .join(\"\\n\");\n\n  const searchableText = `\nSubject: ${subject}\n\nCategory: ${category}\n\nChapter: ${chapter}\n\nTopic: ${topic}\n\nQuestion Type: ${q.optionType}\n\nDifficulty: ${q.difficultyLevel}\n\nQuestion:\n${processField(q.question)}\n\nOptions:\n${options}\n\nExplanation:\n${processField(q.explanation)}\n\nHint:\n${processField(q.hint)}\n`\n    .replace(/\\n{2,}/g, \"\\n\")\n    .trim();\n\n  return {\n    json: {\n      ...q,\n      searchableText\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4944,
+        1216
+      ],
+      "id": "c3d45191-a353-466d-9bc1-415eb245aa87",
+      "name": "Code in JavaScript"
     }
   ],
   "pinData": {
@@ -2880,6 +2934,11 @@
           }
         ]
       ]
+    },
+    "Finalize Loop Output": {
+      "main": [
+        []
+      ]
     }
   },
   "active": false,
@@ -2888,7 +2947,7 @@
     "binaryMode": "separate",
     "availableInMCP": true
   },
-  "versionId": "9fc69882-4d8a-48e8-a5ff-eb41bf9b3630",
+  "versionId": "ac9e349b-9491-410c-aa33-fe82acc5823d",
   "meta": {
     "templateCredsSetupCompleted": true,
     "aiBuilderAssisted": true,

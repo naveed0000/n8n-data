@@ -1,0 +1,311 @@
+[
+  {
+    "question": "<p>Two point masses {{latex[0]}} and {{latex[1]}} exert a gravitational force {{latex[2]}} on each other when separated by a distance {{latex[3]}}. If the distance between them is doubled, what is the magnitude of the new gravitational force?</p>",
+    "explanation": "<p>The gravitational force between two point masses is inversely proportional to the square of the distance between them, i.e., {{latex[8]}}. If the distance {{latex[3]}} is doubled to {{latex[9]}}, the new force {{latex[10]}} will be {{latex[11]}}. Therefore, {{latex[12]}}.</p>",
+    "latex": [
+      "m_1",
+      "m_2",
+      "F",
+      "R",
+      "\\frac{F}{2}",
+      "\\frac{F}{4}",
+      "2F",
+      "4F",
+      "F \\propto \\frac{1}{R^2}",
+      "2R",
+      "F'",
+      "F' = \\frac{1}{(2R)^2} \\times F = \\frac{1}{4R^2} \\times F",
+      "F' = \\frac{F}{4}"
+    ],
+    "hint": "<p>Recall Newton's Law of Gravitation and its dependence on distance.</p>",
+    "optionType": "Single",
+    "difficultyLevel": "easy",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "options": [
+      {
+        "name": "<p>{{latex[4]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[5]}}</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>{{latex[6]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[7]}}</p>",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "<p>Which of the following statements is TRUE regarding the universal gravitational constant {{latex[0]}}?</p>",
+    "explanation": "<p>The universal gravitational constant {{latex[0]}} is a fundamental constant of nature. It is a scalar quantity and its value is independent of the medium between the masses, the magnitude of the masses, or any other physical conditions. It has a constant value everywhere in the universe.</p>",
+    "latex": [
+      "G"
+    ],
+    "hint": "<p>Consider the definition and nature of the universal gravitational constant.</p>",
+    "optionType": "Single",
+    "difficultyLevel": "easy",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "options": [
+      {
+        "name": "<p>Its value depends on the medium between the interacting masses.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>It is a vector quantity.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Its value changes with the magnitude of the masses involved.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>It is a scalar quantity and has a constant value throughout the universe.</p>",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "question": "<p>Two objects of masses {{latex[0]}} and {{latex[1]}} are separated by a distance {{latex[2]}}. If the gravitational force between them is {{latex[3]}}, what will be the gravitational force if the distance between them is reduced to {{latex[4]}} while their masses remain unchanged?</p>",
+    "explanation": "<p>According to Newton's Law of Gravitation, the force {{latex[3]}} between two masses is given by {{latex[9]}}.</p><p>Initially, {{latex[3]}} is proportional to {{latex[10]}}.</p><p>When the distance is halved to {{latex[4]}}, the new force {{latex[11]}} will be proportional to {{latex[12]}}.</p><p>Taking the ratio: {{latex[13]}}.</p><p>So, {{latex[14]}}.</p>",
+    "latex": [
+      "m_1",
+      "m_2",
+      "r",
+      "F",
+      "\\frac{r}{2}",
+      "\\frac{F}{4}",
+      "\\frac{F}{2}",
+      "2F",
+      "4F",
+      "F = G\\frac{m_1 m_2}{r^2}",
+      "\\frac{1}{r^2}",
+      "\\text{F'}",
+      "\\frac{1}{(\\frac{r}{2})^2} = \\frac{4}{r^2}",
+      "\\frac{\\text{F'}}{F} = \\frac{4/r^2}{1/r^2} = 4",
+      "\\text{F'} = 4F"
+    ],
+    "hint": "<p>Use Newton's Law of Gravitation. The force is inversely proportional to the square of the distance.</p>",
+    "optionType": "Single",
+    "difficultyLevel": "moderate",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "options": [
+      {
+        "name": "<p>{{latex[5]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[6]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[7]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[8]}}</p>",
+        "isCorrect": true
+      }
+    ]
+  },
+  {
+    "question": "<p>The dimensional formula for the universal gravitational constant {{latex[0]}} can be derived from Newton's Law of Gravitation. What is this dimensional formula?</p>",
+    "explanation": "<p>Newton's Law of Gravitation is given by {{latex[5]}}.</p><p>From this, we can express {{latex[0]}} as {{latex[6]}}.</p><p>The dimensions of Force {{latex[7]}} are {{latex[8]}}.</p><p>The dimensions of mass {{latex[9]}} are {{latex[10]}}.</p><p>The dimensions of distance {{latex[11]}} are {{latex[10]}}.</p><p>Substituting these into the expression for {{latex[0]}}:</p><p>{{latex[12]}}</p><p>{{latex[13]}}</p><p>{{latex[14]}}</p>",
+    "latex": [
+      "G",
+      "M^{-1}L^{3}T^{-2}",
+      "M^{1}L^{3}T^{-2}",
+      "M^{-1}L^{-3}T^{2}",
+      "M^{1}L^{-3}T^{2}",
+      "F = G\\frac{m_1 m_2}{r^2}",
+      "G = \\frac{F r^2}{m_1 m_2}",
+      "F",
+      "[MLT^{-2}]",
+      "m",
+      "[M]",
+      "r",
+      "[G] = \\frac{[MLT^{-2}][L]^2}{[M][M]}",
+      "[G] = \\frac{[ML^{3}T^{-2}]}{[M^2]}",
+      "[G] = [M^{-1}L^{3}T^{-2}]"
+    ],
+    "hint": "<p>Newton's Law of Gravitation is {{latex[5]}}. Rearrange to find {{latex[0]}} and substitute the dimensions of force, mass, and distance.</p>",
+    "optionType": "Single",
+    "difficultyLevel": "moderate",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "options": [
+      {
+        "name": "<p>{{latex[1]}}</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>{{latex[2]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[3]}}</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>{{latex[4]}}</p>",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "<p>Which of the following statements are CORRECT regarding the universal gravitational force and the gravitational constant {{latex[0]}}?</p>",
+    "explanation": "<p>A) The gravitational force is always attractive between any two masses. This is a fundamental property of gravitation. (Correct)</p><p>B) The value of {{latex[0]}} is a universal constant and does NOT depend on the medium between the interacting bodies. (Incorrect)</p><p>C) The gravitational force acts along the line joining the centers of the two masses, hence it is a central force. (Correct)</p><p>D) The universal gravitational constant {{latex[0]}} is a scalar quantity, not a vector quantity. (Incorrect)</p><p>Therefore, statements A and C are correct.</p>",
+    "latex": [
+      "G"
+    ],
+    "hint": "<p>Consider the fundamental characteristics of gravitational interaction and the constant {{latex[0]}}.</p>",
+    "optionType": "Multiple",
+    "difficultyLevel": "moderate",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "options": [
+      {
+        "name": "<p>The gravitational force is always attractive between any two masses.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>The value of {{latex[0]}} depends on the nature of the medium between the interacting bodies.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>The gravitational force is a central force.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>The universal gravitational constant {{latex[0]}} is a vector quantity.</p>",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "<p>Three point masses, each of mass {{latex[0]}}, are placed at the vertices of an equilateral triangle with side length {{latex[1]}}. Calculate the magnitude of the net gravitational force on any one of the masses due to the other two.</p>",
+    "explanation": "<p>Let the three masses be {{latex[3]}}, {{latex[4]}}, and {{latex[5]}} at vertices A, B, and C respectively. We want to find the net force on mass {{latex[3]}}.</p><p>The force exerted by mass {{latex[4]}} on mass {{latex[3]}} ({{latex[6]}}) is directed along BA.</p><p>The force exerted by mass {{latex[5]}} on mass {{latex[3]}} ({{latex[7]}}) is directed along CA.</p><p>The magnitude of each force is:</p><p>{{latex[8]}}</p><p>Since {{latex[0]}} and {{latex[1]}},</p><p>{{latex[9]}}</p><p>The angle between {{latex[6]}} and {{latex[7]}} is {{latex[2]}} (angle of an equilateral triangle).</p><p>The magnitude of the resultant force {{latex[10]}} on mass {{latex[3]}} is given by the law of cosines for vectors:</p><p>{{latex[11]}}</p><p>{{latex[12]}}</p><p>{{latex[13]}}</p><p>{{latex[14]}}</p><p>{{latex[15]}}</p><p>The net force is {{latex[16]}}.</p>",
+    "latex": [
+      "m = 1 \\text{ kg}",
+      "r = 1 \\text{ m}",
+      "60^{\\circ}",
+      "m_A",
+      "m_B",
+      "m_C",
+      "\\vec{F}_{BA}",
+      "\\vec{F}_{CA}",
+      "F = G\\frac{m \\cdot m}{r^2}",
+      "F = G\\frac{(1 \\text{ kg})(1 \\text{ kg})}{(1 \\text{ m})^2} = G \\text{ N}",
+      "\\vec{F}_{net}",
+      "|\\vec{F}_{net}| = \\sqrt{F_{BA}^2 + F_{CA}^2 + 2F_{BA}F_{CA}\\cos 60^{\\circ}}",
+      "|\\vec{F}_{net}| = \\sqrt{G^2 + G^2 + 2G \\cdot G \\cdot \\frac{1}{2}}",
+      "|\\vec{F}_{net}| = \\sqrt{G^2 + G^2 + G^2}",
+      "|\\vec{F}_{net}| = \\sqrt{3G^2}",
+      "|\\vec{F}_{net}| = G\\sqrt{3}",
+      "G\\sqrt{3} \\text{ N}"
+    ],
+    "hint": "<p>Calculate the force exerted by each of the other two masses, then find the vector sum. The angle between the force vectors is {{latex[2]}}.</p>",
+    "optionType": "Numerical",
+    "difficultyLevel": "hard",
+    "role": "admin",
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "inputBox": ""
+  }
+]

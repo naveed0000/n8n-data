@@ -1,0 +1,554 @@
+[
+  {
+    "question": "<p>Two point masses Mass of the first point object involved in the gravitational interaction. and Mass of the second point object involved in the gravitational interaction. exert a gravitational force Initial gravitational force between the two point masses when separated by a distance R. on each other when separated by a distance Initial distance between the two point masses.. If the distance between them is doubled, what is the magnitude of the new gravitational force?</p>",
+    "explanation": "<p>The gravitational force between two point masses is inversely proportional to the square of the distance between them, i.e., Newton's law of gravitation showing that gravitational force is inversely proportional to the square of the distance between the masses.. If the distance Initial distance between the two point masses. is doubled to The new distance between the two point masses after the original distance is doubled., the new force The new gravitational force after the distance between the masses is doubled. will be Derivation showing how the new gravitational force is calculated when the separation distance is doubled.. Therefore, Final result showing that doubling the distance reduces the gravitational force to one-fourth of its original value..</p>",
+    "hint": "<p>Recall Newton's Law of Gravitation and its dependence on distance.</p>",
+    "optionType": "single",
+    "difficultyLevel": "easy",
+    "options": [
+      {
+        "name": "<p>Half of the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>One-fourth of the initial gravitational force; the correct answer when the distance between the masses is doubled.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>Twice the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Four times the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      }
+    ],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "latex": [
+      {
+        "key": 0,
+        "expression": "m_1",
+        "description": "Mass of the first point object involved in the gravitational interaction."
+      },
+      {
+        "key": 1,
+        "expression": "m_2",
+        "description": "Mass of the second point object involved in the gravitational interaction."
+      },
+      {
+        "key": 2,
+        "expression": "F",
+        "description": "Initial gravitational force between the two point masses when separated by a distance R."
+      },
+      {
+        "key": 3,
+        "expression": "R",
+        "description": "Initial distance between the two point masses."
+      },
+      {
+        "key": 4,
+        "expression": "\\frac{F}{2}",
+        "description": "Half of the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 5,
+        "expression": "\\frac{F}{4}",
+        "description": "One-fourth of the initial gravitational force; the correct answer when the distance between the masses is doubled."
+      },
+      {
+        "key": 6,
+        "expression": "2F",
+        "description": "Twice the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 7,
+        "expression": "4F",
+        "description": "Four times the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 8,
+        "expression": "F \\propto \\frac{1}{R^2}",
+        "description": "Newton's law of gravitation showing that gravitational force is inversely proportional to the square of the distance between the masses."
+      },
+      {
+        "key": 9,
+        "expression": "2R",
+        "description": "The new distance between the two point masses after the original distance is doubled."
+      },
+      {
+        "key": 10,
+        "expression": "F'",
+        "description": "The new gravitational force after the distance between the masses is doubled."
+      },
+      {
+        "key": 11,
+        "expression": "F' = \\frac{1}{(2R)^2} \\times F = \\frac{1}{4R^2} \\times F",
+        "description": "Derivation showing how the new gravitational force is calculated when the separation distance is doubled."
+      },
+      {
+        "key": 12,
+        "expression": "F' = \\frac{F}{4}",
+        "description": "Final result showing that doubling the distance reduces the gravitational force to one-fourth of its original value."
+      }
+    ]
+  },
+  {
+    "question": "<p>Which of the following statements is TRUE regarding the universal gravitational constant Universal gravitational constant.?</p>",
+    "explanation": "<p>The universal gravitational constant Universal gravitational constant. is a fundamental constant of nature. It is a scalar quantity and its value is independent of the medium between the masses, the magnitude of the masses, or any other physical conditions. It has a constant value everywhere in the universe.</p>",
+    "hint": "<p>Consider the definition and nature of the universal gravitational constant.</p>",
+    "optionType": "single",
+    "difficultyLevel": "easy",
+    "options": [
+      {
+        "name": "<p>Its value depends on the medium between the interacting masses.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>It is a vector quantity.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Its value changes with the magnitude of the masses involved.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>It is a scalar quantity and has a constant value throughout the universe.</p>",
+        "isCorrect": true
+      }
+    ],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "latex": [
+      {
+        "key": 0,
+        "expression": "G",
+        "description": "Universal gravitational constant."
+      }
+    ]
+  },
+  {
+    "question": "<p>Two objects of masses Mass of the first object. and Mass of the second object. are separated by a distance Initial distance between the two masses.. If the gravitational force between them is Initial gravitational force between the two masses when separated by distance r., what will be the gravitational force if the distance between them is reduced to Half of the initial distance; the new separation distance between the masses. while their masses remain unchanged?</p>",
+    "explanation": "<p>According to Newton's Law of Gravitation, the force Initial gravitational force between the two masses when separated by distance r. between two masses is given by Newton's law of universal gravitation..</p><p>Initially, Initial gravitational force between the two masses when separated by distance r. is proportional to Inverse square dependence of the gravitational force on distance..</p><p>When the distance is halved to Half of the initial distance; the new separation distance between the masses., the new force The new gravitational force after the distance between the masses is halved. will be proportional to Inverse square term when the distance is halved, showing the force increases by a factor of 4..</p><p>Taking the ratio: Ratio showing the new force is 4 times the initial force..</p><p>So, Final result showing that halving the distance increases the gravitational force to four times its original value..</p>",
+    "hint": "<p>Use Newton's Law of Gravitation. The force is inversely proportional to the square of the distance.</p>",
+    "optionType": "single",
+    "difficultyLevel": "moderate",
+    "options": [
+      {
+        "name": "<p>One-fourth of the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Half of the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Twice the initial gravitational force; an incorrect answer choice.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>Four times the initial gravitational force; the correct answer when the distance is halved.</p>",
+        "isCorrect": true
+      }
+    ],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "latex": [
+      {
+        "key": 0,
+        "expression": "m_1",
+        "description": "Mass of the first object."
+      },
+      {
+        "key": 1,
+        "expression": "m_2",
+        "description": "Mass of the second object."
+      },
+      {
+        "key": 2,
+        "expression": "r",
+        "description": "Initial distance between the two masses."
+      },
+      {
+        "key": 3,
+        "expression": "F",
+        "description": "Initial gravitational force between the two masses when separated by distance r."
+      },
+      {
+        "key": 4,
+        "expression": "\\frac{r}{2}",
+        "description": "Half of the initial distance; the new separation distance between the masses."
+      },
+      {
+        "key": 5,
+        "expression": "\\frac{F}{4}",
+        "description": "One-fourth of the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 6,
+        "expression": "\\frac{F}{2}",
+        "description": "Half of the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 7,
+        "expression": "2F",
+        "description": "Twice the initial gravitational force; an incorrect answer choice."
+      },
+      {
+        "key": 8,
+        "expression": "4F",
+        "description": "Four times the initial gravitational force; the correct answer when the distance is halved."
+      },
+      {
+        "key": 9,
+        "expression": "F = G\\frac{m_1 m_2}{r^2}",
+        "description": "Newton's law of universal gravitation."
+      },
+      {
+        "key": 10,
+        "expression": "\\frac{1}{r^2}",
+        "description": "Inverse square dependence of the gravitational force on distance."
+      },
+      {
+        "key": 11,
+        "expression": "\\text{F'}",
+        "description": "The new gravitational force after the distance between the masses is halved."
+      },
+      {
+        "key": 12,
+        "expression": "\\frac{1}{(\\frac{r}{2})^2} = \\frac{4}{r^2}",
+        "description": "Inverse square term when the distance is halved, showing the force increases by a factor of 4."
+      },
+      {
+        "key": 13,
+        "expression": "\\frac{\\text{F'}}{F} = \\frac{4/r^2}{1/r^2} = 4",
+        "description": "Ratio showing the new force is 4 times the initial force."
+      },
+      {
+        "key": 14,
+        "expression": "\\text{F'} = 4F",
+        "description": "Final result showing that halving the distance increases the gravitational force to four times its original value."
+      }
+    ]
+  },
+  {
+    "question": "<p>The dimensional formula for the universal gravitational constant Universal gravitational constant. can be derived from Newton's Law of Gravitation. What is this dimensional formula?</p>",
+    "explanation": "<p>Newton's Law of Gravitation is given by Newton's law of universal gravitation..</p><p>From this, we can express Universal gravitational constant. as Expression for the universal gravitational constant derived from Newton's law of gravitation..</p><p>The dimensions of Force Gravitational force. are Dimensional formula of force..</p><p>The dimensions of mass Mass. are Dimensional formula of mass..</p><p>The dimensions of distance Distance between the masses. are Dimensional formula of mass..</p><p>Substituting these into the expression for Universal gravitational constant.:</p><p>Substitution of dimensional formulas into the expression for G.</p><p>Simplification of the numerator of the dimensional expression for G.</p><p>Final dimensional formula of the universal gravitational constant.</p>",
+    "hint": "<p>Newton's Law of Gravitation is Newton's law of universal gravitation.. Rearrange to find Universal gravitational constant. and substitute the dimensions of force, mass, and distance.</p>",
+    "optionType": "single",
+    "difficultyLevel": "moderate",
+    "options": [
+      {
+        "name": "<p>Dimensional formula of the universal gravitational constant; the correct answer.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>An incorrect dimensional formula for the universal gravitational constant.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>An incorrect dimensional formula for the universal gravitational constant.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>An incorrect dimensional formula for the universal gravitational constant.</p>",
+        "isCorrect": false
+      }
+    ],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "latex": [
+      {
+        "key": 0,
+        "expression": "G",
+        "description": "Universal gravitational constant."
+      },
+      {
+        "key": 1,
+        "expression": "M^{-1}L^{3}T^{-2}",
+        "description": "Dimensional formula of the universal gravitational constant; the correct answer."
+      },
+      {
+        "key": 2,
+        "expression": "M^{1}L^{3}T^{-2}",
+        "description": "An incorrect dimensional formula for the universal gravitational constant."
+      },
+      {
+        "key": 3,
+        "expression": "M^{-1}L^{-3}T^{2}",
+        "description": "An incorrect dimensional formula for the universal gravitational constant."
+      },
+      {
+        "key": 4,
+        "expression": "M^{1}L^{-3}T^{2}",
+        "description": "An incorrect dimensional formula for the universal gravitational constant."
+      },
+      {
+        "key": 5,
+        "expression": "F = G\\frac{m_1 m_2}{r^2}",
+        "description": "Newton's law of universal gravitation."
+      },
+      {
+        "key": 6,
+        "expression": "G = \\frac{F r^2}{m_1 m_2}",
+        "description": "Expression for the universal gravitational constant derived from Newton's law of gravitation."
+      },
+      {
+        "key": 7,
+        "expression": "F",
+        "description": "Gravitational force."
+      },
+      {
+        "key": 8,
+        "expression": "[MLT^{-2}]",
+        "description": "Dimensional formula of force."
+      },
+      {
+        "key": 9,
+        "expression": "m",
+        "description": "Mass."
+      },
+      {
+        "key": 10,
+        "expression": "[M]",
+        "description": "Dimensional formula of mass."
+      },
+      {
+        "key": 11,
+        "expression": "r",
+        "description": "Distance between the masses."
+      },
+      {
+        "key": 12,
+        "expression": "[G] = \\frac{[MLT^{-2}][L]^2}{[M][M]}",
+        "description": "Substitution of dimensional formulas into the expression for G."
+      },
+      {
+        "key": 13,
+        "expression": "[G] = \\frac{[ML^{3}T^{-2}]}{[M^2]}",
+        "description": "Simplification of the numerator of the dimensional expression for G."
+      },
+      {
+        "key": 14,
+        "expression": "[G] = [M^{-1}L^{3}T^{-2}]",
+        "description": "Final dimensional formula of the universal gravitational constant."
+      }
+    ]
+  },
+  {
+    "question": "<p>Which of the following statements are CORRECT regarding the universal gravitational force and the gravitational constant Universal gravitational constant.?</p>",
+    "explanation": "<p>A) The gravitational force is always attractive between any two masses. This is a fundamental property of gravitation. (Correct)</p><p>B) The value of Universal gravitational constant. is a universal constant and does NOT depend on the medium between the interacting bodies. (Incorrect)</p><p>C) The gravitational force acts along the line joining the centers of the two masses, hence it is a central force. (Correct)</p><p>D) The universal gravitational constant Universal gravitational constant. is a scalar quantity, not a vector quantity. (Incorrect)</p><p>Therefore, statements A and C are correct.</p>",
+    "hint": "<p>Consider the fundamental characteristics of gravitational interaction and the constant Universal gravitational constant..</p>",
+    "optionType": "multiple",
+    "difficultyLevel": "moderate",
+    "options": [
+      {
+        "name": "<p>The gravitational force is always attractive between any two masses.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>The value of Universal gravitational constant. depends on the nature of the medium between the interacting bodies.</p>",
+        "isCorrect": false
+      },
+      {
+        "name": "<p>The gravitational force is a central force.</p>",
+        "isCorrect": true
+      },
+      {
+        "name": "<p>The universal gravitational constant Universal gravitational constant. is a vector quantity.</p>",
+        "isCorrect": false
+      }
+    ],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "latex": [
+      {
+        "key": 0,
+        "expression": "G",
+        "description": "Universal gravitational constant."
+      }
+    ]
+  },
+  {
+    "question": "<p>Three point masses, each of mass Mass of each point mass placed at the vertices of the equilateral triangle., are placed at the vertices of an equilateral triangle with side length Side length of the equilateral triangle, equal to the distance between any two masses.. Calculate the magnitude of the net gravitational force on any one of the masses due to the other two.</p>",
+    "explanation": "<p>Let the three masses be Mass at vertex A of the equilateral triangle., Mass at vertex B of the equilateral triangle., and Mass at vertex C of the equilateral triangle. at vertices A, B, and C respectively. We want to find the net force on mass Mass at vertex A of the equilateral triangle..</p><p>The force exerted by mass Mass at vertex B of the equilateral triangle. on mass Mass at vertex A of the equilateral triangle. (Gravitational force exerted by mass B on mass A.) is directed along BA.</p><p>The force exerted by mass Mass at vertex C of the equilateral triangle. on mass Mass at vertex A of the equilateral triangle. (Gravitational force exerted by mass C on mass A.) is directed along CA.</p><p>The magnitude of each force is:</p><p>Magnitude of the gravitational force between any two masses in the equilateral triangle configuration.</p><p>Since Mass of each point mass placed at the vertices of the equilateral triangle. and Side length of the equilateral triangle, equal to the distance between any two masses.,</p><p>Calculated magnitude of the force between two masses, equal to G Newtons.</p><p>The angle between Gravitational force exerted by mass B on mass A. and Gravitational force exerted by mass C on mass A. is Angle between the two gravitational force vectors acting on a mass from the other two masses. (angle of an equilateral triangle).</p><p>The magnitude of the resultant force Net gravitational force on mass A due to masses B and C. on mass Mass at vertex A of the equilateral triangle. is given by the law of cosines for vectors:</p><p>Magnitude of the resultant force using the law of cosines for vector addition.</p><p>Substitution of force magnitudes and cosine of 60 degrees into the resultant force formula.</p><p>Simplification of the terms inside the square root.</p><p>Combining like terms to get 3G squared under the square root.</p><p>Magnitude of the net gravitational force on the mass.</p><p>The net force is Final numerical value of the net gravitational force with units of Newtons.</p>",
+    "hint": "<p>Calculate the force exerted by each of the other two masses, then find the vector sum. The angle between the force vectors is Angle between the two gravitational force vectors acting on a mass from the other two masses..</p>",
+    "optionType": "numerical",
+    "difficultyLevel": "hard",
+    "options": [],
+    "images": [],
+    "subjectIds": [
+      1
+    ],
+    "subjectCategoryIds": [
+      1
+    ],
+    "chapterIds": [
+      6
+    ],
+    "topicIds": [
+      20
+    ],
+    "examCategoryIds": [
+      1
+    ],
+    "inputBox": "",
+    "latex": [
+      {
+        "key": 0,
+        "expression": "m = 1 \\text{ kg}",
+        "description": "Mass of each point mass placed at the vertices of the equilateral triangle."
+      },
+      {
+        "key": 1,
+        "expression": "r = 1 \\text{ m}",
+        "description": "Side length of the equilateral triangle, equal to the distance between any two masses."
+      },
+      {
+        "key": 2,
+        "expression": "60^{\\circ}",
+        "description": "Angle between the two gravitational force vectors acting on a mass from the other two masses."
+      },
+      {
+        "key": 3,
+        "expression": "m_A",
+        "description": "Mass at vertex A of the equilateral triangle."
+      },
+      {
+        "key": 4,
+        "expression": "m_B",
+        "description": "Mass at vertex B of the equilateral triangle."
+      },
+      {
+        "key": 5,
+        "expression": "m_C",
+        "description": "Mass at vertex C of the equilateral triangle."
+      },
+      {
+        "key": 6,
+        "expression": "\\vec{F}_{BA}",
+        "description": "Gravitational force exerted by mass B on mass A."
+      },
+      {
+        "key": 7,
+        "expression": "\\vec{F}_{CA}",
+        "description": "Gravitational force exerted by mass C on mass A."
+      },
+      {
+        "key": 8,
+        "expression": "F = G\\frac{m \\cdot m}{r^2}",
+        "description": "Magnitude of the gravitational force between any two masses in the equilateral triangle configuration."
+      },
+      {
+        "key": 9,
+        "expression": "F = G\\frac{(1 \\text{ kg})(1 \\text{ kg})}{(1 \\text{ m})^2} = G \\text{ N}",
+        "description": "Calculated magnitude of the force between two masses, equal to G Newtons."
+      },
+      {
+        "key": 10,
+        "expression": "\\vec{F}_{net}",
+        "description": "Net gravitational force on mass A due to masses B and C."
+      },
+      {
+        "key": 11,
+        "expression": "|\\vec{F}_{net}| = \\sqrt{F_{BA}^2 + F_{CA}^2 + 2F_{BA}F_{CA}\\cos 60^{\\circ}}",
+        "description": "Magnitude of the resultant force using the law of cosines for vector addition."
+      },
+      {
+        "key": 12,
+        "expression": "|\\vec{F}_{net}| = \\sqrt{G^2 + G^2 + 2G \\cdot G \\cdot \\frac{1}{2}}",
+        "description": "Substitution of force magnitudes and cosine of 60 degrees into the resultant force formula."
+      },
+      {
+        "key": 13,
+        "expression": "|\\vec{F}_{net}| = \\sqrt{G^2 + G^2 + G^2}",
+        "description": "Simplification of the terms inside the square root."
+      },
+      {
+        "key": 14,
+        "expression": "|\\vec{F}_{net}| = \\sqrt{3G^2}",
+        "description": "Combining like terms to get 3G squared under the square root."
+      },
+      {
+        "key": 15,
+        "expression": "|\\vec{F}_{net}| = G\\sqrt{3}",
+        "description": "Magnitude of the net gravitational force on the mass."
+      },
+      {
+        "key": 16,
+        "expression": "G\\sqrt{3} \\text{ N}",
+        "description": "Final numerical value of the net gravitational force with units of Newtons."
+      }
+    ]
+  }
+]
