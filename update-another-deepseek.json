@@ -4,12 +4,12 @@
     "year": 2026,
     "subject": "physics",
     "language": "english",
-    "totalquestions": 2034,
+    "totalquestions": 1866,
     "batchsize": 6,
     "strictmode": true,
     "outputformat": "json",
     "questionsperapicall": 6,
-    "totalapicalls": 339
+    "totalapicalls": 311
   },
   "metadata": {
     "version": "2.0",
@@ -29,8 +29,8 @@
     {
       "id": 1,
       "name": "mechanics",
-      "questioncount": 804,
-      "apicalls": 134,
+      "questioncount": 636,
+      "apicalls": 106,
       "chapters": [
         {
           "id": 1,
@@ -299,19 +299,19 @@
         {
           "id": 5,
           "name": "rotational motion",
-          "questioncount": 120,
-          "apicalls": 20,
+          "questioncount": 24,
+          "apicalls": 4,
           "generationconfig": {
             "batchsize": 6,
             "difficultydistribution": {
-              "easy": 40,
-              "moderate": 60,
-              "hard": 20
+              "easy": 8,
+              "moderate": 12,
+              "hard": 4
             },
             "questiontypedistribution": {
-              "single": 80,
-              "multiple": 20,
-              "numerical": 20
+              "single": 16,
+              "multiple": 4,
+              "numerical": 4
             },
             "perbatchdistribution": {
               "difficulty": {
@@ -343,7 +343,7 @@
                 "conservation of angular momentum and its applications"
               ],
               "id": 16,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "moment of inertia",
@@ -353,7 +353,7 @@
                 "parallel axes and perpendicular axes theorems"
               ],
               "id": 17,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "equations of motion",
@@ -361,7 +361,7 @@
                 "equations of rotational motion; rolling motion"
               ],
               "id": 18,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "equilibrium-rotation",
@@ -369,26 +369,26 @@
                 "equilibrium of rigid bodies; conditions for equilibrium"
               ],
               "id": 19,
-              "questioncount": 30
+              "questioncount": 0
             }
           ]
         },
         {
           "id": 6,
           "name": "gravitation",
-          "questioncount": 150,
-          "apicalls": 25,
+          "questioncount": 78,
+          "apicalls": 13,
           "generationconfig": {
             "batchsize": 6,
             "difficultydistribution": {
-              "easy": 50,
-              "moderate": 75,
-              "hard": 25
+              "easy": 26,
+              "moderate": 39,
+              "hard": 13
             },
             "questiontypedistribution": {
-              "single": 100,
-              "multiple": 25,
-              "numerical": 25
+              "single": 52,
+              "multiple": 13,
+              "numerical": 13
             },
             "perbatchdistribution": {
               "difficulty": {
@@ -410,7 +410,7 @@
                 "universal law of gravitation; gravitational constant"
               ],
               "id": 20,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "variation of g",
@@ -418,7 +418,7 @@
                 "variation of acceleration due to gravity with altitude and depth"
               ],
               "id": 21,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "planetary motion",
@@ -426,7 +426,7 @@
                 "kepler's laws of planetary motion"
               ],
               "id": 22,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "gravitational potential & energy",
@@ -434,7 +434,7 @@
                 "gravitational potential energy; gravitational potential"
               ],
               "id": 23,
-              "questioncount": 30
+              "questioncount": 0
             },
             {
               "name": "satellites",
@@ -1412,14 +1412,14 @@
   ],
   "questiondistribution": {
     "difficulty": {
-      "easy": 678,
-      "moderate": 1017,
-      "hard": 339
+      "easy": 622,
+      "moderate": 933,
+      "hard": 311
     },
     "questiontype": {
-      "single": 1356,
-      "multiple": 339,
-      "numerical": 339
+      "single": 1244,
+      "multiple": 311,
+      "numerical": 311
     }
   },
   "apicallsummary": {

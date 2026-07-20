@@ -10,7 +10,7 @@
 | Field | Value |
 |-------|-------|
 | **Name** | for gemani ai model updated |
-| **ID** | `RWpigWQwMT7EBzp9` |
+| **ID** | `S8QvTTe9FucwRfU3` |
 | **Active** | `false` (runs **on demand only**) |
 | **Trigger count** | `0` — manual trigger, no schedule/webhook activation |
 | **Archived** | `false` |
